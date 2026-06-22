@@ -24,11 +24,38 @@ especialidades: Seguros, Hogar, Obras y Capital.
 
 ```bash
 pnpm install
+cp .env.example .env.local   # y rellenar con credenciales reales
 pnpm dev          # http://localhost:3000
 pnpm build        # build de producción
 pnpm typecheck
 pnpm lint
 ```
+
+## Envío del formulario de contacto (SMTP)
+
+El formulario de `/contacto` se envía por SMTP usando `nodemailer`. Las credenciales
+viven en `.env.local` (ignorado por git). Copia `.env.example` y rellena:
+
+```env
+SMTP_HOST=smtp.ionos.es        # IONOS (España)
+SMTP_PORT=587                  # 587 STARTTLS · 465 SSL
+SMTP_USER=info@nikkoeco.com    # buzón emisor (usuario = email completo)
+SMTP_PASS=...                  # contraseña del buzón
+MAIL_TO=ventas@nikkoeco.com    # destinatario de las solicitudes
+MAIL_FROM_NAME=Web Nikko Eco
+```
+
+El email se envía con:
+
+- `From`: `MAIL_FROM_NAME <SMTP_USER>`
+- `To`: `MAIL_TO`
+- `Reply-To`: el visitante — al pulsar "Responder" desde tu buzón se contesta
+  directamente al cliente.
+- Cuerpo: texto plano + HTML con el branding de Nikko Eco.
+
+Si las variables faltan o el envío falla, el formulario muestra al usuario un error
+("no hemos podido enviar tu mensaje, inténtalo de nuevo o llámanos") y se registra
+en los logs del servidor. La solicitud nunca se pierde silenciosamente.
 
 ## Estructura
 

@@ -1,6 +1,7 @@
 "use server";
 
 import { subBrands } from "@/lib/brand";
+import { sendContactEmail } from "@/lib/mailer";
 
 export type ContactState = {
   status: "idle" | "success" | "error";
@@ -11,24 +12,6 @@ export type ContactState = {
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const VALID_SERVICES = subBrands.map((s) => s.slug) as string[];
 
-/**
- * Server Action del formulario de contacto.
- *
- * Hoy valida y registra la solicitud en el log del servidor. Para enviar
- * el email de verdad, conecta aquí tu proveedor (p. ej. Resend o SMTP):
- *
- *   import { Resend } from "resend";
- *   const resend = new Resend(process.env.RESEND_API_KEY);
- *   await resend.emails.send({
- *     from: "web@nikkoeco.com",
- *     to: "ventas@nikkoeco.com",
- *     subject: `Nueva solicitud — ${name}`,
- *     replyTo: email,
- *     text: `${name} (${email}, ${phone})\nEspecialidad: ${service}\n\n${message}`,
- *   });
- *
- * La clave va en una variable de entorno (RESEND_API_KEY), nunca en el repo.
- */
 export async function submitContact(
   _prev: ContactState,
   formData: FormData,
@@ -50,14 +33,22 @@ export async function submitContact(
 
   const safeService = VALID_SERVICES.includes(service) ? service : "general";
 
-  // TODO: conectar proveedor de email (ver comentario arriba).
-  console.info("[contacto] nueva solicitud", {
-    name,
-    email,
-    phone,
-    service: safeService,
-    message,
-  });
+  try {
+    await sendContactEmail({
+      name,
+      email,
+      phone,
+      service: safeService,
+      message,
+    });
+  } catch (err) {
+    console.error("[contacto] fallo enviando email", err);
+    return {
+      status: "error",
+      message:
+        "No hemos podido enviar tu mensaje. Inténtalo de nuevo o llámanos directamente.",
+    };
+  }
 
   return {
     status: "success",
