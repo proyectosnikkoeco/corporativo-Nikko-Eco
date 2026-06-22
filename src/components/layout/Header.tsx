@@ -34,11 +34,11 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-7">
           <LinkButton href="/contacto" variant="primary" size="sm" className="hidden md:inline-flex">
             Pide presupuesto
           </LinkButton>
-          <Isotype size={32} tone="dark" />
+          <Isotype size={60} tone="dark" />
         </div>
       </div>
     </header>

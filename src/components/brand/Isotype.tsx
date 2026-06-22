@@ -23,7 +23,7 @@ export function Isotype({
     <svg
       width={size}
       height={size}
-      viewBox="0 0 200 200"
+      viewBox="36 38 128 128"
       role="img"
       aria-label={title}
       style={{ display: "block" }}
