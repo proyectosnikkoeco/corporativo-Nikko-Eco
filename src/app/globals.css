@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/**
+ * Tokens de marca — Nikko Eco
+ * Estos valores son placeholders. Cuando llegue la guía de Claude Design,
+ * reemplazar los HEX por los definitivos y todo el sitio se actualizará.
+ */
+:root {
+  /* Paleta principal (placeholder eco-green) */
+  --brand-primary: #2f7d4f;
+  --brand-primary-contrast: #ffffff;
+  --brand-secondary: #1a3b2e;
+  --brand-accent: #c9e265;
+
+  /* Neutros */
+  --brand-ink: #0f1a14;
+  --brand-muted: #5b6b62;
+  --brand-soft: #f4f7f2;
+  --brand-line: #e3e9e3;
+
+  /* Superficies */
+  --background: #ffffff;
+  --foreground: var(--brand-ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand: var(--brand-primary);
+  --color-brand-contrast: var(--brand-primary-contrast);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-line: var(--brand-line);
+
+  --font-sans: var(--font-brand-sans);
+  --font-display: var(--font-brand-display);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-brand-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
