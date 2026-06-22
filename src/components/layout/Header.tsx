@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Wordmark } from "@/components/brand/Wordmark";
+import { Isotype } from "@/components/brand/Isotype";
 import { LinkButton } from "@/components/ui/Button";
 import { brand } from "@/lib/brand";
 
@@ -12,13 +13,14 @@ const nav = [
 export function Header() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border-soft bg-bone-300/90 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
         <Link
           href="/"
           aria-label={`${brand.name} — Inicio`}
-          className="flex items-center"
+          className="flex items-center gap-2.5"
         >
-          <Wordmark size="sm" tone="dark" />
+          <Isotype size={36} tone="dark" />
+          <Wordmark size="md" tone="dark" />
         </Link>
 
         <nav className="hidden items-center gap-9 md:flex">
