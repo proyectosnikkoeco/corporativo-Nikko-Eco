@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { Button } from "@/components/ui/Button";
+import { ContactForm } from "@/components/sections/ContactForm";
 import { brand } from "@/lib/brand";
 
 export const metadata: Metadata = {
@@ -10,8 +10,6 @@ export const metadata: Metadata = {
 
 const labelClass =
   "font-mono text-[10.5px] uppercase tracking-[0.22em] font-semibold text-ink-400";
-const inputClass =
-  "mt-2 block w-full rounded-xs border border-ink-200 bg-bone-100 px-4 py-3 text-[14px] text-ink-900 outline-none transition-colors focus:border-amber-500";
 
 export default function ContactoPage() {
   return (
@@ -67,48 +65,7 @@ export default function ContactoPage() {
             </dl>
           </div>
 
-          <form
-            className="bg-bone-200 p-8 md:p-10 border-l-2 border-amber-400"
-            aria-label="Formulario de contacto"
-          >
-            <p className={labelClass}>Pídenos presupuesto</p>
-            <div className="mt-6 space-y-5">
-              <label className="block">
-                <span className={labelClass}>Nombre</span>
-                <input name="name" required className={inputClass} />
-              </label>
-              <label className="block">
-                <span className={labelClass}>Email</span>
-                <input name="email" type="email" required className={inputClass} />
-              </label>
-              <label className="block">
-                <span className={labelClass}>Teléfono</span>
-                <input name="phone" className={inputClass} />
-              </label>
-              <label className="block">
-                <span className={labelClass}>Especialidad</span>
-                <select name="service" className={inputClass} defaultValue="">
-                  <option value="" disabled>
-                    Elige…
-                  </option>
-                  <option value="seguros">Nikko Seguros</option>
-                  <option value="hogar">Nikko Hogar</option>
-                  <option value="obras">Nikko Obras</option>
-                  <option value="capital">Nikko Capital</option>
-                </select>
-              </label>
-              <label className="block">
-                <span className={labelClass}>Cuéntanos tu proyecto</span>
-                <textarea name="message" rows={5} required className={inputClass} />
-              </label>
-              <Button type="submit" variant="primary" size="lg" className="w-full">
-                Enviar
-              </Button>
-              <p className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-ink-400">
-                Te llamamos hoy
-              </p>
-            </div>
-          </form>
+          <ContactForm />
         </div>
       </div>
     </section>

@@ -70,7 +70,13 @@ export function Footer() {
       <div className="border-t border-border-inverse">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-5 text-[11px] font-mono uppercase tracking-[0.22em] text-bone-300/45 md:flex-row">
           <p>© {year} {brand.name}. Todos los derechos reservados.</p>
-          <p>Aviso legal · Privacidad · Cookies</p>
+          <p className="flex gap-2">
+            <Link href="/aviso-legal" className="hover:text-amber-400">Aviso legal</Link>
+            <span aria-hidden>·</span>
+            <Link href="/privacidad" className="hover:text-amber-400">Privacidad</Link>
+            <span aria-hidden>·</span>
+            <Link href="/cookies" className="hover:text-amber-400">Cookies</Link>
+          </p>
         </div>
       </div>
     </footer>
