@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { LinkButton } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Isotype } from "@/components/brand/Isotype";
@@ -5,42 +6,56 @@ import { brand } from "@/lib/brand";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-ink-800 text-bone-300">
-      {/* Halo ámbar decorativo */}
+    <section className="relative isolate overflow-hidden bg-ink-800 text-bone-300">
+      {/* Foto de fondo a pantalla completa */}
+      <Image
+        src="/images/hero.jpg"
+        alt="Vivienda moderna al atardecer"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+      />
+
+      {/* Degradado de tinta: oscurece la izquierda para que el texto se lea */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-40 -top-32 h-[600px] w-[600px] rounded-full opacity-60"
+        className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(circle, rgba(240,183,62,0.16), transparent 60%)",
+            "linear-gradient(90deg, rgba(10,14,26,0.92) 0%, rgba(10,14,26,0.78) 38%, rgba(10,14,26,0.35) 70%, rgba(10,14,26,0.15) 100%)",
+        }}
+      />
+      {/* Refuerzo inferior para los botones */}
+      <div
+        aria-hidden
+        className="absolute inset-x-0 bottom-0 h-1/3"
+        style={{
+          background: "linear-gradient(0deg, rgba(10,14,26,0.55), transparent)",
         }}
       />
 
-      {/* Isotipo de marca, grande, integrado con el halo */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute right-4 top-10 hidden opacity-90 md:block lg:right-12"
-      >
-        <Isotype size={300} tone="light" />
-      </div>
+      <div className="relative z-10 mx-auto max-w-6xl px-6 pb-28 pt-28 md:pb-36 md:pt-36">
+        <Isotype size={72} tone="light" />
 
-      <div className="relative mx-auto max-w-6xl px-6 pb-28 pt-28 md:pb-36 md:pt-36">
-        <Eyebrow tone="accent">Grupo de servicio inmobiliario</Eyebrow>
+        <div className="mt-8">
+          <Eyebrow tone="accent">Grupo de servicio inmobiliario</Eyebrow>
+        </div>
 
         <h1
-          className="mt-7 font-sans font-bold text-bone-300"
+          className="mt-6 font-sans font-bold text-bone-300"
           style={{
             fontSize: "clamp(48px, 8vw, 92px)",
             lineHeight: 0.95,
             letterSpacing: "-0.055em",
           }}
         >
-          <span className="text-bone-300/55">Tus objetivos,</span>
+          <span className="text-bone-300/60">Tus objetivos,</span>
           <br />
           <span className="text-amber-400">nuestra meta.</span>
         </h1>
 
-        <p className="mt-7 max-w-2xl font-serif italic font-light text-[22px] leading-[1.3] tracking-[-0.015em] text-bone-300/75">
+        <p className="mt-7 max-w-xl font-serif italic font-light text-[22px] leading-[1.3] tracking-[-0.015em] text-bone-300/85">
           {brand.description}
         </p>
 
@@ -52,7 +67,7 @@ export function Hero() {
             href="/servicios"
             variant="ghost"
             size="lg"
-            className="!text-bone-300 !border-border-inverse hover:!bg-ink-700"
+            className="!text-bone-300 !border-bone-300/30 hover:!bg-bone-300/10"
           >
             Ver servicios
           </LinkButton>
