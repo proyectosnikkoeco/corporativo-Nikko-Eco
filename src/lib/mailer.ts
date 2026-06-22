@@ -150,4 +150,84 @@ export async function sendContactEmail(payload: ContactPayload): Promise<void> {
     text,
     html,
   });
+
+  // Email de confirmación al cliente. Si falla, no rompemos el flujo: lo
+  // crítico es la notificación interna que ya se ha enviado arriba.
+  try {
+    await sendConfirmationEmail(transporter, cfg, payload, service);
+  } catch (err) {
+    console.error("[contacto] no se pudo enviar la confirmación al cliente", err);
+  }
+}
+
+/**
+ * Acuse de recibo automático al cliente que rellena el formulario.
+ */
+async function sendConfirmationEmail(
+  transporter: Transporter,
+  cfg: SmtpConfig,
+  payload: ContactPayload,
+  service: string,
+): Promise<void> {
+  const subject = "Hemos recibido tu solicitud · Nikko Eco";
+
+  const text = [
+    `Hola ${payload.name},`,
+    ``,
+    `Gracias por escribirnos. Hemos recibido tu solicitud sobre ${service} y`,
+    `un técnico nuestro la está revisando. Te contactamos hoy mismo.`,
+    ``,
+    `Esto es lo que nos has contado:`,
+    `"${payload.message}"`,
+    ``,
+    `Si necesitas añadir algo, puedes responder a este correo.`,
+    ``,
+    `Tus objetivos, nuestra meta.`,
+    `Nikko Eco · nikkoeco.com`,
+  ].join("\n");
+
+  const html = `<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>${esc(subject)}</title></head>
+<body style="margin:0;padding:0;background:#EFEDE6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#0A0E1A;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#EFEDE6;">
+    <tr><td align="center" style="padding:32px 16px;">
+      <table role="presentation" width="560" cellpadding="0" cellspacing="0" style="max-width:560px;">
+        <tr><td style="padding:36px 36px 28px;background:#0A0E1A;">
+          <p style="margin:0;font-size:24px;font-weight:800;letter-spacing:-1.2px;color:#EFEDE6;">Nikko<i style="color:#F0B73E;font-style:italic;font-family:Georgia,serif;font-weight:300;font-size:0.6em;"> Eco.</i></p>
+        </td></tr>
+        <tr><td style="padding:36px 36px 8px;background:#F6F4ED;border-left:3px solid #F0B73E;">
+          <p style="margin:0;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:#4A5566;font-weight:600;">— Solicitud recibida</p>
+          <h1 style="margin:18px 0 16px;font-size:28px;line-height:1.1;letter-spacing:-0.03em;color:#0A0E1A;font-weight:700;">
+            Hola ${esc(payload.name)}, gracias por escribirnos.
+          </h1>
+          <p style="margin:0 0 14px;font-size:15px;line-height:1.6;color:#0A0E1A;">
+            Hemos recibido tu solicitud sobre <strong>${esc(service)}</strong> y un técnico nuestro la está revisando. Te contactamos hoy mismo.
+          </p>
+        </td></tr>
+        <tr><td style="padding:8px 36px 32px;background:#F6F4ED;border-left:3px solid #F0B73E;">
+          <p style="margin:18px 0 8px;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#8A92A0;font-weight:600;">Tu mensaje</p>
+          <p style="margin:0;padding:16px 18px;background:#EFEDE6;font-size:15px;line-height:1.55;color:#0A0E1A;white-space:pre-wrap;font-style:italic;">${esc(payload.message)}</p>
+          <p style="margin:20px 0 0;font-size:14px;line-height:1.6;color:#4A5566;">
+            Si necesitas añadir algo, responde a este correo.
+          </p>
+        </td></tr>
+        <tr><td style="padding:20px 36px;background:#0A0E1A;color:rgba(239,237,230,0.65);">
+          <p style="margin:0;font-size:13px;font-style:italic;font-family:Georgia,serif;color:#F0B73E;">Tus objetivos, nuestra meta.</p>
+          <p style="margin:6px 0 0;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;">Nikko Eco · nikkoeco.com</p>
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`;
+
+  await transporter.sendMail({
+    from: `"${cfg.fromName}" <${cfg.user}>`,
+    to: `"${payload.name}" <${payload.email}>`,
+    replyTo: cfg.user,
+    subject,
+    text,
+    html,
+  });
 }
