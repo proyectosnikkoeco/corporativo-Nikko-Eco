@@ -1,0 +1,8 @@
+/* ============================================================
+   Webfonts — Nikko Eco
+   Geist + Fraunces (Google Fonts). Mismas familias usadas en
+   toda la exploración de identidad. Si se quiere autohospedar,
+   sustituir por @font-face locales.
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,200..900;1,9..144,200..900&display=swap");

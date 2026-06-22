@@ -1,0 +1,15 @@
+/* ============================================================
+   Radius — Nikko Eco
+   Conservador. La marca pide esquinas casi rectas (premium serio).
+   Sólo se redondean elementos de interacción y pills.
+   ============================================================ */
+
+:root {
+  --radius-0:    0;        /* default — cards, secciones, contenedores */
+  --radius-1:    2px;      /* botones de UI, inputs */
+  --radius-2:    4px;      /* tags pequeños */
+  --radius-3:    6px;      /* pills medianos */
+  --radius-4:    10px;     /* botones grandes */
+  --radius-pill: 999px;    /* pills de estado */
+  --radius-circle: 50%;
+}

@@ -1,0 +1,74 @@
+/* ============================================================
+   Colors — Nikko Eco
+   Tinta + ámbar + hueso. Paleta sobria, premium, con un único
+   acento cálido. Los tokens base son fríos/cálidos puros; los
+   semánticos se construyen sobre ellos.
+   ============================================================ */
+
+:root {
+  /* ------------ Base · Tinta (oscuros, fondos corporativos) */
+  --ink-900: #050811;     /* deepest — footers, prints CMYK-safe */
+  --ink-800: #0A0E1A;     /* primary ink — background marca madre */
+  --ink-700: #131826;     /* surface 2 — cards sobre fondo oscuro */
+  --ink-600: #1C2233;     /* hover / elevated surface */
+  --ink-500: #2A3142;     /* divisores sobre oscuro */
+  --ink-400: #4A5566;     /* slate — texto secundario sobre claro */
+  --ink-300: #8A92A0;     /* ash — texto muted */
+  --ink-200: #C3C8D1;     /* line on light */
+  --ink-100: #E2E5EA;     /* border sutil */
+
+  /* ------------ Base · Hueso (claros, papel) */
+  --bone-100: #FAF8F1;    /* paper, fondo más claro */
+  --bone-200: #F6F4ED;    /* surface light 2 */
+  --bone-300: #EFEDE6;    /* surface light primario */
+  --bone-400: #E5E2D9;    /* divisor sobre claro */
+
+  /* ------------ Acento · Ámbar (único accent cálido) */
+  --amber-300: #F8D17A;   /* hover ligero sobre claro */
+  --amber-400: #F0B73E;   /* AMBER PRIMARIO — accent oficial */
+  --amber-500: #E89C2E;   /* Amber soft — hover, pressed */
+  --amber-600: #C78122;   /* dark amber para texto sobre claro accesible */
+  --amber-700: #8C5A18;   /* amber muy oscuro — usar con moderación */
+
+  /* ------------ Estados (semánticos, derivados pero estables) */
+  --positive: #5BE26B;    /* éxito, plazo cumplido */
+  --positive-dim: #2F8A3D;
+  --warning: #F0B73E;     /* atención = amber (sin saturar paleta) */
+  --negative: #B85050;    /* error, retraso */
+  --negative-dim: #7A3030;
+
+  /* ============================================================
+     SEMÁNTICOS — uso preferente en componentes
+     ============================================================ */
+
+  /* Surfaces */
+  --surface-base:        var(--bone-300);   /* tema claro: base general */
+  --surface-raised:      var(--bone-200);   /* card sobre claro */
+  --surface-sunken:      var(--bone-400);
+  --surface-inverse:     var(--ink-800);    /* hero oscuro / footer */
+  --surface-inverse-2:   var(--ink-700);    /* card sobre fondo oscuro */
+  --surface-accent:      var(--amber-400);  /* CTA, highlight */
+
+  /* Text */
+  --text-strong:         var(--ink-900);
+  --text-body:           var(--ink-800);
+  --text-muted:          var(--ink-400);
+  --text-soft:           var(--ink-300);
+  --text-inverse:        var(--bone-300);
+  --text-inverse-muted:  rgba(239, 237, 230, 0.65);
+  --text-on-accent:      var(--ink-900);    /* texto sobre amber */
+  --text-accent:         var(--amber-500);  /* amber legible sobre claro */
+  --text-accent-dark:    var(--amber-600);
+
+  /* Borders */
+  --border-soft:         var(--ink-100);
+  --border-strong:       var(--ink-200);
+  --border-inverse:      rgba(239, 237, 230, 0.10);
+  --border-inverse-strong: rgba(239, 237, 230, 0.18);
+  --border-accent:       var(--amber-400);
+
+  /* Brand */
+  --brand-ink:           var(--ink-800);
+  --brand-accent:        var(--amber-400);
+  --brand-paper:         var(--bone-300);
+}

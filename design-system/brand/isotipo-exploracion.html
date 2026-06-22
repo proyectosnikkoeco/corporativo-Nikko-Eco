@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Nikko Eco — Exploración de isotipo</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+  body { background: var(--ink-800); color: var(--bone-300); padding: 64px 56px 96px; font-family: var(--font-sans); }
+  .h-eyebrow { font-family: var(--font-meta); font-size: 11px; letter-spacing: var(--ls-mono); text-transform: uppercase; color: var(--amber-400); margin: 0 0 18px; display: flex; align-items: center; gap: 12px; }
+  .h-eyebrow::before { content:""; width: 24px; height: 1px; background: var(--amber-400); }
+  h1 { font-family: var(--font-serif); font-weight: 300; font-size: 56px; line-height: 1; letter-spacing: -0.03em; margin: 0 0 18px; }
+  h1 i { font-style: italic; color: var(--amber-400); }
+  .lead { font-size: 16px; line-height: 1.55; color: rgba(239,237,230,0.7); max-width: 720px; margin: 0 0 64px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .opt { background: var(--ink-700); border: 1px solid rgba(239,237,230,0.08); padding: 0; overflow: hidden; }
+  .opt .canvas { background: var(--bone-300); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; padding: 36px; }
+  .opt .meta { padding: 18px 22px 22px; }
+  .opt .num { font-family: var(--font-meta); font-size: 10.5px; letter-spacing: var(--ls-mono); text-transform: uppercase; color: var(--amber-400); margin: 0 0 6px; }
+  .opt h3 { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: 22px; letter-spacing: var(--ls-serif-tight); margin: 0 0 8px; color: var(--bone-300); }
+  .opt p { font-family: var(--font-sans); font-size: 12.5px; line-height: 1.45; color: rgba(239,237,230,0.65); margin: 0; }
+  svg { display: block; }
+  /* lockup grid */
+  .lockups { margin-top: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .lockup { background: var(--ink-700); border: 1px solid rgba(239,237,230,0.08); padding: 56px; display: flex; align-items: center; gap: 32px; }
+  .lockup.light { background: var(--bone-300); color: var(--ink-900); }
+  .lock-wm { font-family: var(--font-sans); font-weight: 700; letter-spacing: -0.06em; line-height: 0.86; font-size: 64px; display: inline-flex; align-items: flex-end; gap: 5px; }
+  .lock-wm .eco { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: 0.55em; letter-spacing: -0.04em; margin-bottom: 0.06em; line-height: 1; }
+  .dark .lock-wm { color: var(--bone-300); }
+  .dark .lock-wm .eco { color: var(--amber-400); }
+  .light .lock-wm { color: var(--ink-900); }
+  .light .lock-wm .eco { color: var(--amber-600); }
+  .divider { width: 1px; height: 80px; background: rgba(239,237,230,0.2); }
+  .light .divider { background: rgba(10,14,26,0.2); }
+</style>
+</head>
+<body>
+
+  <p class="h-eyebrow">Isotipo · 4 direcciones</p>
+  <h1>Marcas gráficas que <i>conviven</i> con el wordmark.</h1>
+  <p class="lead">Cuatro propuestas de isotipo, todas pensadas para usarse junto al wordmark (como sello/avatar) o solas (favicon, app icon, marca de agua). Cada una arranca de un concepto distinto. Léelas pensando dónde te imaginas viéndolas: en una furgoneta, en un favicon, en un sello de garantía al final de un presupuesto.</p>
+
+  <div class="grid">
+
+    <!-- 01 — Punto -->
+    <div class="opt">
+      <div class="canvas">
+        <svg width="180" height="180" viewBox="0 0 180 180">
+          <text x="90" y="118" text-anchor="middle" font-family="Geist, sans-serif" font-weight="800" font-size="120" letter-spacing="-6" fill="#0A0E1A">N</text>
+          <circle cx="138" cy="118" r="10" fill="#F0B73E"/>
+        </svg>
+      </div>
+      <div class="meta">
+        <p class="num">01 · El punto</p>
+        <h3>N + punto ámbar</h3>
+        <p>El final declarativo de la marca, condensado. La "N" como inicial; el punto ámbar como rúbrica. Mínimo, atemporal, perfecto para favicon o sello.</p>
+      </div>
+    </div>
+
+    <!-- 02 — Sello -->
+    <div class="opt">
+      <div class="canvas">
+        <svg width="180" height="180" viewBox="0 0 180 180">
+          <circle cx="90" cy="90" r="84" fill="none" stroke="#0A0E1A" stroke-width="2"/>
+          <text x="90" y="106" text-anchor="middle" font-family="Geist, sans-serif" font-weight="800" font-size="80" letter-spacing="-4" fill="#0A0E1A">N</text>
+          <text x="90" y="160" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="9" letter-spacing="4" fill="#C78122">NIKKO·ECO</text>
+        </svg>
+      </div>
+      <div class="meta">
+        <p class="num">02 · El sello</p>
+        <h3>Marca de garantía circular</h3>
+        <p>Sello clásico tipo lacre. Funciona como aval de calidad en presupuestos, certificados o como insignia "Garantía Nikko". Tradicional, sin tópicos.</p>
+      </div>
+    </div>
+
+    <!-- 03 — Monograma -->
+    <div class="opt">
+      <div class="canvas">
+        <svg width="180" height="180" viewBox="0 0 180 180">
+          <rect x="20" y="20" width="140" height="140" fill="#0A0E1A"/>
+          <text x="90" y="118" text-anchor="middle" font-family="Geist, sans-serif" font-weight="800" font-size="100" letter-spacing="-5" fill="#EFEDE6">N</text>
+          <text x="148" y="118" font-family="'Fraunces', serif" font-style="italic" font-weight="300" font-size="40" fill="#F0B73E">.</text>
+        </svg>
+      </div>
+      <div class="meta">
+        <p class="num">03 · El monograma</p>
+        <h3>Bloque tinta · N + punto</h3>
+        <p>La marca como bloque. Tinta sólida, N en hueso, punto ámbar serif. Encaja perfecto como app icon, redes (avatar), o aplicado en grande sobre furgonetas.</p>
+      </div>
+    </div>
+
+    <!-- 04 — Estructura -->
+    <div class="opt">
+      <div class="canvas">
+        <svg width="180" height="180" viewBox="0 0 180 180">
+          <g stroke="#0A0E1A" stroke-width="2.5" fill="none" stroke-linecap="square">
+            <path d="M30 150 L30 50 L60 50 L120 130 L120 50 L150 50 L150 150"/>
+          </g>
+          <circle cx="150" cy="150" r="8" fill="#F0B73E"/>
+        </svg>
+      </div>
+      <div class="meta">
+        <p class="num">04 · La estructura</p>
+        <h3>N arquitectónica</h3>
+        <p>La "N" reducida a estructura: dos pilares y una diagonal. Referencia directa al edificio. Más conceptual; brilla en piezas grandes (fachada, mural, etiqueta).</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Lockups -->
+  <p class="h-eyebrow" style="margin-top: 80px;">Lockup · isotipo + wordmark</p>
+  <h1 style="font-size: 36px; margin-bottom: 36px;">Cómo conviven los dos.</h1>
+
+  <div class="lockups">
+    <div class="lockup dark">
+      <svg width="80" height="80" viewBox="0 0 180 180">
+        <rect x="20" y="20" width="140" height="140" fill="#F0B73E"/>
+        <text x="90" y="118" text-anchor="middle" font-family="Geist, sans-serif" font-weight="800" font-size="100" letter-spacing="-5" fill="#0A0E1A">N</text>
+        <text x="148" y="118" font-family="'Fraunces', serif" font-style="italic" font-weight="300" font-size="40" fill="#0A0E1A">.</text>
+      </svg>
+      <div class="divider"></div>
+      <span class="lock-wm">Nikko<span class="eco">Eco.</span></span>
+    </div>
+    <div class="lockup light">
+      <svg width="80" height="80" viewBox="0 0 180 180">
+        <circle cx="90" cy="90" r="84" fill="none" stroke="#0A0E1A" stroke-width="2"/>
+        <text x="90" y="106" text-anchor="middle" font-family="Geist, sans-serif" font-weight="800" font-size="80" letter-spacing="-4" fill="#0A0E1A">N</text>
+        <text x="90" y="160" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="9" letter-spacing="4" fill="#C78122">NIKKO·ECO</text>
+      </svg>
+      <div class="divider"></div>
+      <span class="lock-wm">Nikko<span class="eco">Eco.</span></span>
+    </div>
+  </div>
+
+  <p style="font-family: var(--font-meta); font-size: 11px; letter-spacing: var(--ls-mono); text-transform: uppercase; color: rgba(239,237,230,0.45); margin-top: 64px; line-height: 1.7;">Para Claude Code: estas son propuestas SVG. La marca <b style="color: var(--amber-400);">aún no ha elegido isotipo oficial</b>. Cuando el cliente decida, refinar la SVG ganadora y añadirla a <code style="color: var(--amber-400);">assets/logo/</code> en tres variantes (full color, monocroma sobre claro, monocroma sobre oscuro).</p>
+
+</body>
+</html>

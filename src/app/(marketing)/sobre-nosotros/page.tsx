@@ -1,50 +1,48 @@
 import type { Metadata } from "next";
-import { About } from "@/components/sections/About";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { Principles } from "@/components/sections/Principles";
 import { CTA } from "@/components/sections/CTA";
 
 export const metadata: Metadata = {
   title: "Sobre nosotros",
   description:
-    "Conoce al equipo de Nikko Eco: ingeniería, normativa y compromiso medioambiental.",
+    "Nikko Eco — grupo de servicio inmobiliario integral. Cuidamos del lugar donde se vive, donde se trabaja y donde se invierte.",
 };
 
 export default function SobreNosotrosPage() {
   return (
     <>
-      <section className="mx-auto max-w-3xl px-6 py-24">
-        <p className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-brand">
-          Sobre nosotros
-        </p>
-        <h1 className="mt-3 font-display text-4xl font-bold text-brand-secondary md:text-5xl">
-          Hacemos que la sostenibilidad sea ejecutable.
-        </h1>
-        <div className="mt-8 space-y-5 text-brand-ink/85">
-          <p>
-            Nikko Eco nace para acompañar a empresas e instituciones en su
-            transición ambiental. Combinamos perfiles de ingeniería, normativa
-            y operaciones para entregar proyectos que se ejecutan, no que se
-            archivan.
-          </p>
-          <p>
-            Nuestra forma de trabajar se apoya en tres principios:
-          </p>
-          <ul className="list-disc space-y-2 pl-6">
-            <li>
-              <strong>Datos antes que opiniones.</strong> Medimos antes de
-              proponer.
-            </li>
-            <li>
-              <strong>Presupuestos transparentes.</strong> Sin partidas
-              opacas ni sorpresas.
-            </li>
-            <li>
-              <strong>Cumplimiento desde el día uno.</strong> Cada
-              entregable se diseña para superar las inspecciones.
-            </li>
-          </ul>
+      <section className="bg-bone-300">
+        <div className="mx-auto max-w-3xl px-6 py-24 md:py-32">
+          <Eyebrow>Sobre nosotros</Eyebrow>
+          <h1
+            className="mt-6 font-sans font-bold text-ink-900"
+            style={{ fontSize: "clamp(42px, 6vw, 72px)", lineHeight: 0.95, letterSpacing: "-0.045em" }}
+          >
+            Quiénes <span className="font-serif italic font-light text-amber-600">somos.</span>
+          </h1>
+
+          <div className="mt-10 space-y-7 text-[17px] leading-[1.65] text-ink-800/90">
+            <p className="font-serif italic font-light text-[24px] leading-[1.35] tracking-[-0.015em] text-ink-800">
+              Nikko Eco es un grupo de servicio inmobiliario integral con cuatro
+              especialidades: Seguros, Hogar, Obras y Capital.
+            </p>
+            <p>
+              Cuidamos del lugar donde se vive, donde se trabaja y donde se invierte.
+              Nuestra propuesta es simple: una sola interlocución, un solo expediente y
+              cuatro oficios técnicos que se coordinan internamente para que tú no
+              tengas que hacerlo.
+            </p>
+            <p>
+              Trabajamos sin opacidad y sin promesas vacías. Cuando damos un plazo, ese
+              es el plazo. Cuando cerramos un presupuesto, ese es el precio. Y si no
+              llegamos a tiempo, te lo compensamos.
+            </p>
+          </div>
         </div>
       </section>
-      <About />
+
+      <Principles />
       <CTA />
     </>
   );

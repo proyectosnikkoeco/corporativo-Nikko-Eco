@@ -1,0 +1,17 @@
+/* ============================================================
+   Shadows — Nikko Eco
+   Sombras sutiles, casi imperceptibles. La marca prefiere
+   bordes finos y separación por color, no por elevación.
+   ============================================================ */
+
+:root {
+  --shadow-none:    none;
+  --shadow-1:       0 1px 2px rgba(10, 14, 26, 0.04);
+  --shadow-2:       0 2px 8px rgba(10, 14, 26, 0.06);
+  --shadow-3:       0 8px 24px rgba(10, 14, 26, 0.08);
+  --shadow-4:       0 18px 48px rgba(10, 14, 26, 0.12);
+
+  /* Sobre fondo oscuro (ink) las sombras no funcionan; se usa border. */
+  --glow-amber:     0 0 0 1px rgba(240, 183, 62, 0.35), 0 0 24px rgba(240, 183, 62, 0.15);
+  --glow-amber-soft: 0 0 0 1px rgba(240, 183, 62, 0.2);
+}

@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" role="img" aria-label="Nikko Eco">
-  <g fill="currentColor" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
-    <circle cx="22" cy="24" r="16" fill="none" stroke="currentColor" stroke-width="2.5"/>
-    <path d="M22 12 C16 18 16 30 22 36 C28 30 28 18 22 12 Z" fill="currentColor" opacity="0.85"/>
-    <text x="48" y="30" font-size="20" font-weight="700" letter-spacing="0.5">NIKKO</text>
-    <text x="130" y="30" font-size="20" font-weight="400" letter-spacing="3">ECO</text>
-  </g>
-</svg>

@@ -1,14 +1,14 @@
 import { Hero } from "@/components/sections/Hero";
-import { Services } from "@/components/sections/Services";
-import { About } from "@/components/sections/About";
+import { SubBrandsGrid } from "@/components/sections/SubBrandsGrid";
+import { Principles } from "@/components/sections/Principles";
 import { CTA } from "@/components/sections/CTA";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <Services />
-      <About />
+      <SubBrandsGrid />
+      <Principles />
       <CTA />
     </>
   );

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Nikko Eco — Manual de marca</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+  @page { size: A4; margin: 0; }
+  body { background: #1A1F2E; padding: 32px 24px 64px; }
+  .page { width: 794px; min-height: 1123px; margin: 0 auto 24px; background: var(--bone-100); color: var(--ink-900); padding: 72px 72px 64px; font-family: var(--font-sans); page-break-after: always; box-shadow: 0 24px 80px rgba(0,0,0,0.3); position: relative; }
+  .page:last-child { page-break-after: auto; }
+  @media print { body { background: white; padding: 0; } .page { box-shadow: none; margin: 0; } }
+
+  .page-num { position: absolute; bottom: 32px; right: 56px; font-family: var(--font-meta); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-400); }
+  .page-foot { position: absolute; bottom: 32px; left: 72px; font-family: var(--font-meta); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-400); }
+
+  .eyebrow { font-family: var(--font-meta); font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--amber-600); margin: 0 0 22px; display: flex; align-items: center; gap: 12px; }
+  .eyebrow::before { content:""; width: 24px; height: 1px; background: var(--amber-500); }
+
+  h1 { font-family: var(--font-serif); font-weight: 300; font-size: 56px; line-height: 1; letter-spacing: -0.03em; margin: 0 0 18px; color: var(--ink-900); }
+  h1 i { font-style: italic; color: var(--amber-600); }
+  h2 { font-family: var(--font-sans); font-weight: 700; font-size: 32px; letter-spacing: -0.04em; margin: 0 0 16px; color: var(--ink-900); }
+  h3 { font-family: var(--font-sans); font-weight: 700; font-size: 18px; letter-spacing: -0.02em; margin: 0 0 8px; color: var(--ink-900); }
+  p { font-family: var(--font-sans); font-size: 14px; line-height: 1.55; color: var(--ink-800); margin: 0 0 14px; }
+  .lead { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: 22px; line-height: 1.35; letter-spacing: var(--ls-serif-tight); color: var(--ink-800); margin: 0 0 32px; }
+
+  hr { border: 0; border-top: 1px solid var(--border-soft); margin: 32px 0; }
+
+  /* ============ COVER ============ */
+  .cover { background: var(--ink-800); color: var(--bone-300); padding: 96px 72px 72px; min-height: 1123px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+  .cover::before { content:""; position: absolute; right: -160px; top: -120px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(240,183,62,0.12), transparent 60%); pointer-events: none; }
+  .cover .eyebrow { color: var(--amber-400); }
+  .cover .eyebrow::before { background: var(--amber-400); }
+  .cover .wm { font-family: var(--font-sans); font-weight: 700; letter-spacing: -0.06em; line-height: 0.86; font-size: 140px; color: var(--bone-300); display: inline-flex; align-items: flex-end; gap: 6px; margin-bottom: 36px; position: relative; z-index: 1; }
+  .cover .wm .eco { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: 0.55em; color: var(--amber-400); letter-spacing: -0.04em; margin-bottom: 0.06em; line-height: 1; }
+  .cover h1 { color: var(--bone-300); font-size: 64px; position: relative; z-index: 1; }
+  .cover h1 i { color: var(--amber-400); }
+  .cover-meta { padding-top: 24px; border-top: 1px solid rgba(239,237,230,0.18); display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; position: relative; z-index: 1; }
+  .cover-meta .k { font-family: var(--font-meta); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(239,237,230,0.5); margin: 0 0 6px; }
+  .cover-meta .v { font-family: var(--font-sans); font-weight: 600; font-size: 15px; letter-spacing: -0.02em; color: var(--bone-300); margin: 0; }
+
+  /* ============ Token row ============ */
+  .palette { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .swatch { padding: 22px 20px; min-height: 110px; display: flex; flex-direction: column; justify-content: space-between; }
+  .swatch .nm { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: 22px; letter-spacing: var(--ls-serif-tight); }
+  .swatch .hex { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; }
+
+  .type-spec { display: grid; grid-template-columns: 100px 1fr; gap: 14px 24px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--border-soft); }
+  .type-spec:last-child { border-bottom: 0; }
+  .type-spec .k { font-family: var(--font-meta); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-400); }
+  .type-spec .v { color: var(--ink-900); }
+  .v.display { font-family: var(--font-sans); font-weight: 700; font-size: 42px; letter-spacing: var(--ls-display); line-height: 0.95; }
+  .v.serif { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: 32px; letter-spacing: var(--ls-serif-display); line-height: 1; color: var(--amber-600); }
+  .v.body { font-family: var(--font-sans); font-size: 14px; line-height: 1.55; }
+  .v.meta { font-family: var(--font-meta); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-400); }
+
+  .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .rule { padding: 16px 18px; background: var(--bone-200); border-left: 3px solid; }
+  .rule.yes { border-color: var(--positive); }
+  .rule.no { border-color: var(--negative); }
+  .rule .lbl { font-family: var(--font-meta); font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; margin: 0 0 6px; }
+  .rule.yes .lbl { color: var(--positive-dim); }
+  .rule.no .lbl { color: var(--negative-dim); }
+  .rule .ex { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: 15px; line-height: 1.35; color: var(--ink-800); margin: 0; }
+  .rule.no .ex { color: rgba(10,14,26,0.55); text-decoration: line-through; text-decoration-color: rgba(184,80,80,0.5); }
+
+  .principles { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .principle { padding: 18px 20px; border: 1px solid var(--border-soft); background: var(--bone-200); }
+  .principle .num { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: 22px; color: var(--amber-600); margin: 0 0 6px; line-height: 1; }
+  .principle h4 { font-family: var(--font-sans); font-weight: 700; font-size: 22px; letter-spacing: -0.03em; margin: 0 0 6px; color: var(--ink-900); }
+  .principle h4 .dot { color: var(--amber-500); }
+  .principle p { font-size: 13px; margin: 0; color: rgba(10,14,26,0.7); }
+
+  .pair-card { background: var(--ink-800); color: var(--bone-300); padding: 32px; margin-bottom: 18px; }
+  .pair-card .wm { font-family: var(--font-sans); font-weight: 700; letter-spacing: -0.06em; line-height: 0.86; font-size: 56px; color: var(--bone-300); display: inline-flex; align-items: flex-end; gap: 4px; margin-bottom: 18px; }
+  .pair-card .wm .eco { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: 0.55em; color: var(--amber-400); letter-spacing: -0.04em; margin-bottom: 0.06em; line-height: 1; }
+  .pair-card .claim { font-family: var(--font-sans); font-weight: 700; font-size: 36px; line-height: 0.95; letter-spacing: var(--ls-display); margin: 0; }
+  .pair-card .claim .you { color: rgba(239,237,230,0.55); display: block; }
+  .pair-card .claim .us { color: var(--amber-400); display: block; }
+</style>
+</head>
+<body>
+
+<!-- ═════════ PORTADA ═════════ -->
+<div class="page cover">
+  <div style="position: relative; z-index:1;">
+    <p class="eyebrow">Manual de marca · v0.1</p>
+    <span class="wm">Nikko<span class="eco">Eco.</span></span>
+    <h1>El sistema de identidad,<br/><i>en una página.</i></h1>
+  </div>
+  <div class="cover-meta">
+    <div><p class="k">Documento</p><p class="v">NKK / MAN-001</p></div>
+    <div><p class="k">Versión</p><p class="v">v0.1 · Borrador</p></div>
+    <div><p class="k">Uso</p><p class="v">Interno + colaboradores</p></div>
+  </div>
+</div>
+
+<!-- ═════════ 01 — IDENTIDAD ═════════ -->
+<div class="page">
+  <p class="eyebrow">01 · La marca</p>
+  <h1>Quiénes <i>somos.</i></h1>
+  <p class="lead">Nikko Eco es un grupo de servicio inmobiliario integral con cuatro especialidades: Seguros, Hogar, Obras y Capital. Cuidamos del lugar donde se vive, donde se trabaja y donde se invierte.</p>
+
+  <hr/>
+
+  <h2 style="margin-top: 12px;">Los dos claims</h2>
+  <div class="pair-card">
+    <span class="wm">Nikko<span class="eco">Eco.</span></span>
+    <p class="claim"><span class="you">Tus objetivos,</span><span class="us">nuestra meta.</span></p>
+  </div>
+  <p style="margin-bottom: 28px;"><b>Claim principal · corporativo</b>. Voz oficial de la marca paraguas. B2B, deck institucional, web home, comunicación con aseguradoras e inversores.</p>
+
+  <div style="background: var(--bone-300); padding: 32px; margin-bottom: 18px;">
+    <span class="wm" style="font-family: var(--font-sans); font-weight: 700; letter-spacing: -0.06em; line-height: 0.86; font-size: 56px; color: var(--ink-900); display: inline-flex; align-items: flex-end; gap: 4px; margin-bottom: 18px;">Nikko<span style="font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: 0.55em; color: var(--amber-600); letter-spacing: -0.04em; margin-bottom: 0.06em; line-height: 1;">Eco.</span></span>
+    <p style="font-family: var(--font-serif); font-weight: 300; font-size: 36px; line-height: 0.95; letter-spacing: var(--ls-serif-display); margin: 0; color: var(--ink-900);"><span style="color: rgba(10,14,26,0.5); display: block;">Tus metas,</span><span style="font-style: italic; color: var(--amber-600); display: block;">nuestro oficio.</span></p>
+  </div>
+  <p><b>Claim secundario · oficio</b>. Voz del taller, cálida. Para Hogar, Obras, Comunidades: furgonetas, tarjetas, folletos, comunicación directa al usuario final.</p>
+
+  <p class="page-foot">Nikko Eco · Manual de marca</p>
+  <p class="page-num">01 / 04</p>
+</div>
+
+<!-- ═════════ 02 — VISUAL ═════════ -->
+<div class="page">
+  <p class="eyebrow">02 · Sistema visual</p>
+  <h1>Tinta + ámbar <i>+ hueso.</i></h1>
+  <p class="lead">Tres familias y nada más. La contención es la marca.</p>
+
+  <hr/>
+
+  <h3>Paleta principal</h3>
+  <div class="palette" style="margin-bottom: 28px;">
+    <div class="swatch" style="background: var(--ink-800); color: var(--bone-300);"><span class="nm">Tinta</span><span class="hex">#0A0E1A · ink-800</span></div>
+    <div class="swatch" style="background: var(--amber-400); color: var(--ink-900);"><span class="nm">Ámbar</span><span class="hex">#F0B73E · amber-400</span></div>
+    <div class="swatch" style="background: var(--bone-300); color: var(--ink-900); border: 1px solid var(--border-soft);"><span class="nm">Hueso</span><span class="hex">#EFEDE6 · bone-300</span></div>
+  </div>
+  <p style="margin-bottom: 28px;">El <b>ámbar</b> es el único acento cálido del sistema. Se usa para destacar — nunca para decorar. Sobre fondo claro, el ámbar accesible es <code style="font-family: var(--font-mono); font-size: 13px;">amber-600 #C78122</code>.</p>
+
+  <h3>Tipografía</h3>
+  <div class="type-spec">
+    <span class="k">Display</span>
+    <div><span class="v display">Tus objetivos</span><br/><span class="v meta">Geist Bold · -0.055em</span></div>
+  </div>
+  <div class="type-spec">
+    <span class="k">Editorial</span>
+    <div><span class="v serif">nuestra meta</span><br/><span class="v meta">Fraunces Light Italic · -0.035em</span></div>
+  </div>
+  <div class="type-spec">
+    <span class="k">Body</span>
+    <div><span class="v body">Cuidamos del lugar donde se vive, donde se trabaja, donde se invierte.</span><br/><span class="v meta">Geist Regular · 15px / 1.55</span></div>
+  </div>
+  <div class="type-spec">
+    <span class="k">Meta</span>
+    <div><span class="v meta">NKK · MAN-001 · v0.1</span></div>
+  </div>
+
+  <p class="page-foot">Sistema visual</p>
+  <p class="page-num">02 / 04</p>
+</div>
+
+<!-- ═════════ 03 — VOZ ═════════ -->
+<div class="page">
+  <p class="eyebrow">03 · Voz y principios</p>
+  <h1>Cómo <i>hablamos.</i></h1>
+  <p class="lead">Directos. Sin adornos. Premium sin postureo. Españoles sin localismos. Operativos sin tecnicismos.</p>
+
+  <hr/>
+
+  <h3 style="margin-bottom: 14px;">Sí / No</h3>
+  <div class="rules" style="margin-bottom: 32px;">
+    <div class="rule yes"><p class="lbl">Sí · Aparecemos</p><p class="ex">Su técnico llega hoy.</p></div>
+    <div class="rule no"><p class="lbl">No · Promesa vacía</p><p class="ex">Le visitaremos lo antes posible.</p></div>
+    <div class="rule yes"><p class="lbl">Sí · Lo concreto</p><p class="ex">Plazo cerrado. Presupuesto cerrado.</p></div>
+    <div class="rule no"><p class="lbl">No · Lo vago</p><p class="ex">Plazo orientativo, presupuesto a confirmar.</p></div>
+    <div class="rule yes"><p class="lbl">Sí · Persona</p><p class="ex">Un técnico nuestro te llama.</p></div>
+    <div class="rule no"><p class="lbl">No · Sistema</p><p class="ex">Su solicitud será atendida en breve.</p></div>
+    <div class="rule yes"><p class="lbl">Sí · Honestidad</p><p class="ex">Si no llegamos a tiempo, te lo compensamos.</p></div>
+    <div class="rule no"><p class="lbl">No · Excusa</p><p class="ex">Por causas ajenas, ha habido retraso.</p></div>
+  </div>
+
+  <h3 style="margin-bottom: 14px;">Cinco principios</h3>
+  <div class="principles">
+    <div class="principle"><p class="num">i</p><h4>Aparecemos<span class="dot">.</span></h4><p>Cuando dijimos, donde dijimos.</p></div>
+    <div class="principle"><p class="num">ii</p><h4>Cumplimos<span class="dot">.</span></h4><p>Plazo, presupuesto y alcance no se mueven sin avisar.</p></div>
+    <div class="principle"><p class="num">iii</p><h4>Cuidamos<span class="dot">.</span></h4><p>Cada metro como si fuera nuestro.</p></div>
+    <div class="principle"><p class="num">iv</p><h4>Medimos<span class="dot">.</span></h4><p>Datos, expedientes, fotos, tiempos. Sin opacidad.</p></div>
+    <div class="principle" style="grid-column: 1 / -1;"><p class="num">v</p><h4>Hablamos<span class="dot">.</span></h4><p>Sin jerga, sin letra pequeña, sin promesas vacías.</p></div>
+  </div>
+
+  <p class="page-foot">Voz y principios</p>
+  <p class="page-num">03 / 04</p>
+</div>
+
+<!-- ═════════ 04 — APLICACIÓN ═════════ -->
+<div class="page">
+  <p class="eyebrow">04 · Estructura del grupo</p>
+  <h1>Cuatro especialidades, <i>un mismo grupo.</i></h1>
+  <p class="lead">La palabra "Eco" se mantiene sólo en la marca paraguas. Las sub-marcas son siempre "Nikko [Descriptor]".</p>
+
+  <hr/>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 28px;">
+    <div style="background: var(--bone-200); padding: 24px; border-left: 3px solid var(--amber-400);">
+      <p style="font-family: var(--font-meta); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-400); margin: 0 0 10px;">01 · B2B Compañías</p>
+      <p style="font-family: var(--font-sans); font-weight: 700; font-size: 26px; letter-spacing: -0.04em; margin: 0 0 6px; color: var(--ink-900);">Nikko <span style="color: var(--amber-600); font-weight: 500;">Seguros</span></p>
+      <p style="font-family: var(--font-sans); font-size: 13px; line-height: 1.45; color: rgba(10,14,26,0.7); margin: 0;">Gestión integral de expedientes para aseguradoras.</p>
+    </div>
+    <div style="background: var(--bone-200); padding: 24px; border-left: 3px solid var(--amber-400);">
+      <p style="font-family: var(--font-meta); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-400); margin: 0 0 10px;">02 · Particulares</p>
+      <p style="font-family: var(--font-sans); font-weight: 700; font-size: 26px; letter-spacing: -0.04em; margin: 0 0 6px; color: var(--ink-900);">Nikko <span style="color: var(--amber-600); font-weight: 500;">Hogar</span></p>
+      <p style="font-family: var(--font-sans); font-size: 13px; line-height: 1.45; color: rgba(10,14,26,0.7); margin: 0;">Reparación y mantenimiento para familias y comunidades.</p>
+    </div>
+    <div style="background: var(--bone-200); padding: 24px; border-left: 3px solid var(--amber-400);">
+      <p style="font-family: var(--font-meta); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-400); margin: 0 0 10px;">03 · Proyectos cerrados</p>
+      <p style="font-family: var(--font-sans); font-weight: 700; font-size: 26px; letter-spacing: -0.04em; margin: 0 0 6px; color: var(--ink-900);">Nikko <span style="color: var(--amber-600); font-weight: 500;">Obras</span></p>
+      <p style="font-family: var(--font-sans); font-size: 13px; line-height: 1.45; color: rgba(10,14,26,0.7); margin: 0;">Reformas integrales con plazo y precio cerrados.</p>
+    </div>
+    <div style="background: var(--bone-200); padding: 24px; border-left: 3px solid var(--amber-400);">
+      <p style="font-family: var(--font-meta); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-400); margin: 0 0 10px;">04 · Inversión</p>
+      <p style="font-family: var(--font-sans); font-weight: 700; font-size: 26px; letter-spacing: -0.04em; margin: 0 0 6px; color: var(--ink-900);">Nikko <span style="color: var(--amber-600); font-weight: 500;">Capital</span></p>
+      <p style="font-family: var(--font-sans); font-size: 13px; line-height: 1.45; color: rgba(10,14,26,0.7); margin: 0;">Inversión inmobiliaria con el capital del propio grupo.</p>
+    </div>
+  </div>
+
+  <h3>Manifiesto</h3>
+  <p style="font-family: var(--font-sans); font-weight: 700; font-size: 28px; line-height: 1.1; letter-spacing: -0.04em; margin: 0; color: var(--ink-900);">
+    <span style="display: block;">No nos gustan las cosas a medias.</span>
+    <span style="display: block; color: var(--ink-400);">Ni las llamadas sin contestar.</span>
+    <span style="display: block; color: var(--ink-400);">Ni los plazos sin cumplir.</span>
+    <span style="display: block; color: var(--amber-600);">Por eso existe Nikko.</span>
+  </p>
+
+  <p class="page-foot">info@nikkoeco.com · nikkoeco.com</p>
+  <p class="page-num">04 / 04</p>
+</div>
+
+</body>
+</html>

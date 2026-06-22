@@ -1,0 +1,25 @@
+<!-- @dsCard group="Colors" viewport="700x160" name="Pareja madre" subtitle="Tinta + ámbar + hueso · la combinación de identidad" -->
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { padding: 0; }
+  .grid { display: grid; grid-template-columns: 2fr 1fr 1fr; height: 160px; }
+  .cell { display: flex; flex-direction: column; justify-content: space-between; padding: 18px 22px; font-family: var(--font-meta); font-size: 10.5px; letter-spacing: var(--ls-mono); text-transform: uppercase; }
+  .ink { background: var(--ink-800); color: var(--bone-300); }
+  .amber { background: var(--amber-400); color: var(--ink-900); }
+  .bone { background: var(--bone-300); color: var(--ink-800); }
+  .role { opacity: 0.6; }
+  .name { font-family: var(--font-display); font-style: italic; font-weight: var(--fw-light); font-size: 22px; letter-spacing: var(--ls-serif-tight); text-transform: none; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="cell ink"><span class="role">Fondo · principal</span><span class="name">Tinta</span></div>
+    <div class="cell amber"><span class="role">Acento · único</span><span class="name">Ámbar</span></div>
+    <div class="cell bone"><span class="role">Papel · neutro</span><span class="name">Hueso</span></div>
+  </div>
+</body>
+</html>

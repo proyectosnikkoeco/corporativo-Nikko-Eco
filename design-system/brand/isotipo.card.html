@@ -1,0 +1,80 @@
+<!-- @dsCard group="Brand" viewport="700x420" name="Isotipo · N + punto" subtitle="Marca gráfica oficial · 3 variantes" -->
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { background: var(--ink-700); padding: 32px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .cell { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; padding: 36px; position: relative; }
+  .cell .lbl { position: absolute; bottom: 14px; left: 16px; font-family: var(--font-meta); font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase; }
+  .cell.dark { background: var(--ink-800); }
+  .cell.dark .lbl { color: rgba(239,237,230,0.5); }
+  .cell.dark .lbl b { color: var(--amber-400); font-weight: 600; }
+  .cell.light { background: var(--bone-300); }
+  .cell.light .lbl { color: var(--ink-400); }
+  .cell.light .lbl b { color: var(--amber-600); font-weight: 600; }
+  .cell.amber { background: var(--amber-400); }
+  .cell.amber .lbl { color: var(--ink-800); }
+  .cell.amber .lbl b { color: var(--ink-900); font-weight: 700; }
+  svg { width: 100%; max-width: 140px; height: auto; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+  .lockup { background: var(--ink-800); padding: 28px 32px; display: flex; align-items: center; gap: 20px; }
+  .lockup.light { background: var(--bone-300); }
+  .iso { width: 56px; height: 56px; flex-shrink: 0; }
+  .wm { font-family: var(--font-sans); font-weight: 700; letter-spacing: -0.06em; line-height: 0.86; font-size: 42px; display: inline-flex; align-items: flex-end; gap: 4px; }
+  .wm .eco { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: 0.55em; letter-spacing: -0.04em; margin-bottom: 0.06em; line-height: 1; }
+  .lockup.dark .wm { color: var(--bone-300); }
+  .lockup.dark .wm .eco { color: var(--amber-400); }
+  .lockup.light .wm { color: var(--ink-900); }
+  .lockup.light .wm .eco { color: var(--amber-600); }
+  .div { width: 1px; height: 40px; background: rgba(239,237,230,0.2); }
+  .lockup.light .div { background: rgba(10,14,26,0.2); }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="cell light">
+      <svg viewBox="0 0 200 200">
+        <text x="100" y="138" text-anchor="middle" font-family="Geist, sans-serif" font-weight="800" font-size="140" letter-spacing="-7" fill="#0A0E1A">N</text>
+        <circle cx="156" cy="138" r="11" fill="#F0B73E"/>
+      </svg>
+      <span class="lbl"><b>01 ·</b> Sobre claro</span>
+    </div>
+    <div class="cell dark">
+      <svg viewBox="0 0 200 200">
+        <text x="100" y="138" text-anchor="middle" font-family="Geist, sans-serif" font-weight="800" font-size="140" letter-spacing="-7" fill="#EFEDE6">N</text>
+        <circle cx="156" cy="138" r="11" fill="#F0B73E"/>
+      </svg>
+      <span class="lbl"><b>02 ·</b> Sobre tinta</span>
+    </div>
+    <div class="cell amber">
+      <svg viewBox="0 0 200 200">
+        <text x="100" y="138" text-anchor="middle" font-family="Geist, sans-serif" font-weight="800" font-size="140" letter-spacing="-7" fill="#0A0E1A">N</text>
+        <circle cx="156" cy="138" r="11" fill="#0A0E1A"/>
+      </svg>
+      <span class="lbl"><b>03 ·</b> Sobre ámbar</span>
+    </div>
+  </div>
+
+  <div class="row2">
+    <div class="lockup dark">
+      <svg class="iso" viewBox="0 0 200 200">
+        <text x="100" y="138" text-anchor="middle" font-family="Geist, sans-serif" font-weight="800" font-size="140" letter-spacing="-7" fill="#EFEDE6">N</text>
+        <circle cx="156" cy="138" r="11" fill="#F0B73E"/>
+      </svg>
+      <div class="div"></div>
+      <span class="wm">Nikko<span class="eco">Eco.</span></span>
+    </div>
+    <div class="lockup light">
+      <svg class="iso" viewBox="0 0 200 200">
+        <text x="100" y="138" text-anchor="middle" font-family="Geist, sans-serif" font-weight="800" font-size="140" letter-spacing="-7" fill="#0A0E1A">N</text>
+        <circle cx="156" cy="138" r="11" fill="#F0B73E"/>
+      </svg>
+      <div class="div"></div>
+      <span class="wm">Nikko<span class="eco">Eco.</span></span>
+    </div>
+  </div>
+</body>
+</html>

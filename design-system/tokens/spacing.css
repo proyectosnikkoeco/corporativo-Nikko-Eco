@@ -1,0 +1,32 @@
+/* ============================================================
+   Spacing — Nikko Eco
+   Base 4 px. Escala Fibonacci-ish. Generoso, premium.
+   ============================================================ */
+
+:root {
+  --space-0:   0;
+  --space-1:   2px;
+  --space-2:   4px;
+  --space-3:   8px;
+  --space-4:   12px;
+  --space-5:   16px;
+  --space-6:   20px;
+  --space-7:   24px;
+  --space-8:   32px;
+  --space-9:   40px;
+  --space-10:  48px;
+  --space-11:  56px;
+  --space-12:  64px;
+  --space-13:  80px;
+  --space-14:  96px;
+  --space-15:  120px;
+  --space-16:  160px;
+
+  /* Aliases */
+  --pad-card:     var(--space-7);
+  --pad-section:  var(--space-14);
+  --pad-page:     var(--space-13);
+  --gap-tight:    var(--space-3);
+  --gap-base:     var(--space-5);
+  --gap-loose:    var(--space-8);
+}

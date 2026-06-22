@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Nikko Eco — Historia de marca</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,200..900;1,9..144,200..900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  :root {
+    --ink: #0A0E1A;
+    --ink-2: #131826;
+    --amber: #F0B73E;
+    --amber-soft: #E89C2E;
+    --bone: #EFEDE6;
+    --bone-2: #F6F4ED;
+    --slate: #4A5566;
+    --ash: #8A92A0;
+  }
+  body { background: var(--ink); color: var(--bone); font-family: 'Geist', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+  .page { width: 1280px; margin: 0 auto; }
+
+  /* ============ shared section ============ */
+  .section {
+    position: relative;
+    padding: 96px 96px;
+  }
+  .sec-bar {
+    display: flex; gap: 28px; align-items: baseline;
+    margin-bottom: 56px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid;
+  }
+  .sec-bar .num {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+    font-size: 36px; line-height: 1; letter-spacing: -0.03em;
+    color: var(--amber);
+  }
+  .sec-bar .key {
+    font-family: 'Geist Mono', monospace; font-size: 11px;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--ash);
+  }
+  .sec-bar .lbl {
+    font-family: 'Fraunces', serif; font-weight: 300;
+    font-size: 26px; letter-spacing: -0.02em;
+    color: var(--bone);
+    margin-left: auto;
+  }
+  .sec-bar .lbl i { font-style: italic; color: var(--amber); }
+
+  /* ============ HERO ============ */
+  .hero {
+    background: var(--ink);
+    padding: 120px 96px 88px;
+    border-bottom: 1px solid rgba(239,237,230,0.08);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content:""; position: absolute; right: -200px; top: -100px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(240,183,62,0.10), transparent 60%);
+    pointer-events: none;
+  }
+  .hero-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 72px; position: relative; z-index: 1;
+  }
+  .hero-top .lab {
+    font-family: 'Geist Mono', monospace; font-size: 11px;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--amber);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-top .lab::before { content:""; width: 24px; height: 1px; background: var(--amber); }
+  .hero-top .doc {
+    font-family: 'Geist Mono', monospace; font-size: 10.5px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(239,237,230,0.45); text-align: right; line-height: 1.7;
+  }
+  .hero-top .doc b { color: var(--bone); font-weight: 600; }
+
+  .wordmark {
+    font-family: 'Geist', sans-serif; font-weight: 700;
+    font-size: 110px; line-height: 0.86; letter-spacing: -0.06em;
+    color: var(--bone);
+    display: inline-flex; align-items: flex-end; gap: 8px;
+    position: relative; z-index: 1;
+    margin-bottom: 56px;
+  }
+  .wordmark .eco {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+    font-size: 0.55em; color: var(--amber); letter-spacing: -0.04em;
+    margin-bottom: 0.06em; line-height: 1;
+  }
+
+  .hero-claim {
+    font-family: 'Geist', sans-serif; font-weight: 700;
+    font-size: 92px; line-height: 0.95; letter-spacing: -0.055em;
+    color: var(--bone); margin: 0 0 24px;
+    position: relative; z-index: 1; max-width: 980px;
+  }
+  .hero-claim .you { color: rgba(239,237,230,0.55); }
+  .hero-claim .us { color: var(--amber); }
+
+  .hero-sub {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+    font-size: 26px; line-height: 1.3; letter-spacing: -0.015em;
+    color: rgba(239,237,230,0.7); max-width: 760px;
+    position: relative; z-index: 1; margin: 0;
+  }
+
+  .hero-meta {
+    margin-top: 80px; padding-top: 28px;
+    border-top: 1px solid rgba(239,237,230,0.15);
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+    position: relative; z-index: 1;
+  }
+  .hero-meta .col .k {
+    font-family: 'Geist Mono', monospace; font-size: 10.5px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(239,237,230,0.5); margin-bottom: 8px;
+  }
+  .hero-meta .col .v {
+    font-family: 'Geist', sans-serif; font-size: 17px; font-weight: 600;
+    letter-spacing: -0.02em; color: var(--bone);
+  }
+  .hero-meta .col .v b { color: var(--amber); font-weight: 700; }
+
+  /* ============ DARK SECTIONS ============ */
+  .dark { background: var(--ink); color: var(--bone); }
+  .dark .sec-bar { border-color: rgba(239,237,230,0.15); }
+
+  /* ============ LIGHT SECTIONS ============ */
+  .light { background: var(--bone); color: var(--ink); }
+  .light .sec-bar { border-color: rgba(10,14,26,0.12); }
+  .light .sec-bar .key { color: var(--slate); }
+  .light .sec-bar .lbl { color: var(--ink); }
+
+  /* ============ ORIGIN ============ */
+  .origin {
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px;
+    align-items: start;
+  }
+  .origin-lede {
+    font-family: 'Fraunces', serif; font-weight: 300;
+    font-size: 52px; line-height: 1.0; letter-spacing: -0.025em;
+    color: var(--bone); margin: 0;
+  }
+  .origin-lede i { font-style: italic; color: var(--amber); }
+  .origin-body { font-family: 'Geist', sans-serif; font-size: 17px; line-height: 1.65; color: rgba(239,237,230,0.85); }
+  .origin-body p { margin: 0 0 22px; }
+  .origin-body p:last-child { margin-bottom: 0; }
+  .origin-body b { color: var(--amber); font-weight: 600; }
+  .origin-body .conf { color: var(--amber); font-family: 'Geist Mono', monospace; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(240,183,62,0.12); padding: 1px 6px; border: 1px dashed rgba(240,183,62,0.4); font-weight: 500; }
+
+  /* ============ QUÉ HACEMOS ============ */
+  .verts { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid rgba(10,14,26,0.12); border-left: 1px solid rgba(10,14,26,0.12); }
+  .vert {
+    padding: 36px 40px;
+    border-right: 1px solid rgba(10,14,26,0.12);
+    border-bottom: 1px solid rgba(10,14,26,0.12);
+    display: flex; flex-direction: column; gap: 14px;
+    min-height: 200px;
+    background: var(--bone-2);
+  }
+  .vert .num {
+    font-family: 'Geist Mono', monospace; font-size: 10.5px;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--amber-soft);
+    font-weight: 600;
+  }
+  .vert h3 {
+    font-family: 'Fraunces', serif; font-weight: 300;
+    font-size: 42px; line-height: 1; letter-spacing: -0.025em;
+    margin: 0; color: var(--ink);
+  }
+  .vert h3 .nikko { font-family: 'Geist', sans-serif; font-weight: 700; letter-spacing: -0.04em; }
+  .vert h3 b { font-weight: 700; font-family: 'Geist', sans-serif; letter-spacing: -0.04em; }
+  .vert p { font-family: 'Geist', sans-serif; font-size: 14.5px; line-height: 1.55; color: rgba(10,14,26,0.7); margin: 0; }
+  .vert .who { font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--slate); margin-top: auto; }
+
+  /* ============ MANIFIESTO ============ */
+  .manifesto-wrap {
+    background: var(--ink);
+    padding: 120px 96px 120px;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(239,237,230,0.08);
+  }
+  .manifesto-wrap::before {
+    content:""; position: absolute; left: -200px; bottom: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(240,183,62,0.08), transparent 60%);
+    pointer-events: none;
+  }
+  .manifesto-eyebrow {
+    font-family: 'Geist Mono', monospace; font-size: 11px;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--amber); margin: 0 0 48px;
+    display: flex; align-items: center; gap: 12px;
+    position: relative; z-index: 1;
+  }
+  .manifesto-eyebrow::before { content:""; width: 24px; height: 1px; background: var(--amber); }
+  .manifesto {
+    font-family: 'Geist', sans-serif; font-weight: 700;
+    font-size: 96px; line-height: 1.0; letter-spacing: -0.055em;
+    margin: 0; color: var(--bone);
+    position: relative; z-index: 1; max-width: 1100px;
+  }
+  .manifesto .l { display: block; padding: 6px 0; }
+  .manifesto .l.dim { color: rgba(239,237,230,0.45); }
+  .manifesto .l.em { color: var(--amber); }
+
+  /* ============ DOS CLAIMS ============ */
+  .claims-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    border: 1px solid rgba(10,14,26,0.12);
+  }
+  .claim-card {
+    padding: 56px 48px;
+    display: flex; flex-direction: column; gap: 22px;
+    min-height: 360px;
+  }
+  .claim-card.primary { background: var(--ink); color: var(--bone); }
+  .claim-card.primary { border-right: 1px solid rgba(239,237,230,0.12); }
+  .claim-card.secondary { background: var(--bone-2); color: var(--ink); }
+
+  .claim-card .role {
+    font-family: 'Geist Mono', monospace; font-size: 10.5px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .claim-card .role::before { content:""; width: 18px; height: 1px; }
+  .claim-card.primary .role { color: var(--amber); }
+  .claim-card.primary .role::before { background: var(--amber); }
+  .claim-card.secondary .role { color: var(--amber-soft); }
+  .claim-card.secondary .role::before { background: var(--amber-soft); }
+
+  .claim-card .big {
+    font-family: 'Geist', sans-serif; font-weight: 700;
+    font-size: 64px; line-height: 0.95; letter-spacing: -0.055em;
+    margin: 0;
+  }
+  .claim-card.secondary .big {
+    font-family: 'Fraunces', serif; font-weight: 300;
+    font-size: 64px; letter-spacing: -0.035em; line-height: 0.98;
+  }
+  .claim-card .big .you { color: rgba(239,237,230,0.55); }
+  .claim-card .big .us { color: var(--amber); }
+  .claim-card.secondary .big .you { color: rgba(10,14,26,0.5); }
+  .claim-card.secondary .big .us { color: var(--amber-soft); font-style: italic; font-weight: 300; }
+  .claim-card .big .l { display: block; }
+
+  .claim-card .desc {
+    font-family: 'Geist', sans-serif; font-size: 14.5px; line-height: 1.55;
+    margin: 0;
+  }
+  .claim-card.primary .desc { color: rgba(239,237,230,0.75); }
+  .claim-card.secondary .desc { color: rgba(10,14,26,0.7); }
+  .claim-card .desc b { font-weight: 700; }
+  .claim-card.primary .desc b { color: var(--amber); }
+  .claim-card.secondary .desc b { color: var(--amber-soft); }
+
+  .claim-card .use {
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid;
+    font-family: 'Geist Mono', monospace; font-size: 10.5px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    line-height: 1.7;
+  }
+  .claim-card.primary .use { color: rgba(239,237,230,0.6); border-color: rgba(239,237,230,0.12); }
+  .claim-card.secondary .use { color: var(--slate); border-color: rgba(10,14,26,0.1); }
+  .claim-card .use b { font-weight: 700; }
+  .claim-card.primary .use b { color: var(--bone); }
+  .claim-card.secondary .use b { color: var(--ink); }
+
+  /* ============ PRINCIPIOS ============ */
+  .principios { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border-top: 1px solid rgba(239,237,230,0.12); border-left: 1px solid rgba(239,237,230,0.12); }
+  .principio {
+    padding: 36px 32px;
+    border-right: 1px solid rgba(239,237,230,0.12);
+    border-bottom: 1px solid rgba(239,237,230,0.12);
+    background: var(--ink);
+    min-height: 280px;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .principio .num {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+    font-size: 32px; line-height: 1; color: var(--amber); letter-spacing: -0.03em;
+  }
+  .principio h4 {
+    font-family: 'Geist', sans-serif; font-weight: 700;
+    font-size: 30px; line-height: 1; letter-spacing: -0.04em;
+    margin: 0; color: var(--bone);
+  }
+  .principio h4 .stop { color: var(--amber); }
+  .principio p {
+    font-family: 'Geist', sans-serif; font-size: 13.5px; line-height: 1.55;
+    color: rgba(239,237,230,0.7); margin: 0 0 auto;
+  }
+  .principio .ex {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+    font-size: 14px; color: rgba(239,237,230,0.5); letter-spacing: -0.005em;
+    border-top: 1px solid rgba(239,237,230,0.1); padding-top: 12px;
+    line-height: 1.3;
+  }
+
+  /* ============ VOZ ============ */
+  .voz {
+    display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px;
+    align-items: start;
+  }
+  .voz-lede {
+    font-family: 'Fraunces', serif; font-weight: 300;
+    font-size: 48px; line-height: 1.0; letter-spacing: -0.025em;
+    color: var(--ink); margin: 0;
+  }
+  .voz-lede i { font-style: italic; color: var(--amber-soft); }
+  .voz-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  }
+  .voz-card {
+    background: var(--bone-2);
+    border: 1px solid rgba(10,14,26,0.08);
+    padding: 22px 24px;
+  }
+  .voz-card .k {
+    font-family: 'Geist Mono', monospace; font-size: 10.5px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    margin: 0 0 12px;
+  }
+  .voz-card.si .k { color: var(--amber-soft); }
+  .voz-card.si .k::before { content: "Sí · "; }
+  .voz-card.no .k { color: #B85050; }
+  .voz-card.no .k::before { content: "No · "; }
+  .voz-card .ex {
+    font-family: 'Fraunces', serif; font-weight: 300; font-style: italic;
+    font-size: 18px; line-height: 1.3; letter-spacing: -0.015em;
+    color: var(--ink); margin: 0;
+  }
+  .voz-card.no .ex { color: rgba(10,14,26,0.55); text-decoration: line-through; text-decoration-color: rgba(184,80,80,0.5); }
+
+  /* ============ HORIZONTE ============ */
+  .horizonte {
+    background: var(--bone);
+    color: var(--ink);
+    padding: 120px 96px;
+    border-top: 1px solid rgba(10,14,26,0.08);
+    position: relative;
+    overflow: hidden;
+  }
+  .horizonte::before {
+    content:""; position: absolute; right: -200px; bottom: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(240,183,62,0.18), transparent 60%);
+    pointer-events: none;
+  }
+  .horizonte-eyebrow {
+    font-family: 'Geist Mono', monospace; font-size: 11px;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--amber-soft); margin: 0 0 56px;
+    display: flex; align-items: center; gap: 12px;
+    position: relative; z-index: 1;
+  }
+  .horizonte-eyebrow::before { content:""; width: 24px; height: 1px; background: var(--amber-soft); }
+  .horizonte-text {
+    font-family: 'Fraunces', serif; font-weight: 300;
+    font-size: 64px; line-height: 1.0; letter-spacing: -0.03em;
+    color: var(--ink); margin: 0;
+    position: relative; z-index: 1; max-width: 1000px;
+  }
+  .horizonte-text i { font-style: italic; color: var(--amber-soft); }
+  .horizonte-text b { font-family: 'Geist', sans-serif; font-weight: 700; letter-spacing: -0.05em; }
+
+  /* footer */
+  .footer {
+    background: #050811; padding: 32px 96px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Geist Mono', monospace; font-size: 10.5px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(239,237,230,0.4);
+  }
+  .footer b { color: var(--amber); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ════════════ HERO ════════════ -->
+  <section class="hero">
+    <div class="hero-top">
+      <span class="lab">Historia de marca</span>
+      <div class="doc"><b>NKK / HM-001</b><br/>v0.1 · Borrador · Junio 2026</div>
+    </div>
+    <div class="wordmark">Nikko<span class="eco">Eco.</span></div>
+    <h1 class="hero-claim"><span class="you">Tus objetivos,</span><br/><span class="us">nuestra meta.</span></h1>
+    <p class="hero-sub">Cuidamos del lugar donde se vive, donde se trabaja y donde se invierte.</p>
+
+    <div class="hero-meta">
+      <div class="col"><div class="k">Categoría</div><div class="v">Servicio <b>inmobiliario integral</b></div></div>
+      <div class="col"><div class="k">Territorio</div><div class="v">Cobertura <b>nacional</b></div></div>
+      <div class="col"><div class="k">Operación</div><div class="v">Servicio <b>continuo</b> · 24/7</div></div>
+      <div class="col"><div class="k">Estructura</div><div class="v">Grupo · <b>4 especialidades</b></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════ 01 — ORIGEN ════════════ -->
+  <section class="section dark">
+    <div class="sec-bar">
+      <span class="num">01</span>
+      <span class="key">El origen</span>
+      <span class="lbl">De dónde <i>venimos.</i></span>
+    </div>
+    <div class="origin">
+      <p class="origin-lede">Empezamos por una idea simple: <i>aparecer cuando hace falta.</i></p>
+      <div class="origin-body">
+        <p>Nikko nació con una idea simple: una empresa de servicios para el hogar que <b>apareciera cuando hacía falta</b>, no cuando le viniera bien.</p>
+        <p>Lo que empezó como un equipo respondiendo averías se convirtió en una <b>máquina operativa</b> capaz de gestionar más de cincuenta mil expedientes para las principales aseguradoras del país. Aprendimos algo: cuando un edificio falla, el reloj no se detiene. Ni para la familia que se ha quedado sin agua. Ni para el perito que necesita cerrar un parte. Ni para el administrador que tiene una junta el jueves.</p>
+        <p>Esa intuición —<b>el tiempo es la única materia prima honesta de este sector</b>— nos llevó a crecer hasta tener <b>cobertura nacional</b>, y de los hogares a las comunidades, los locales, las empresas y, finalmente, las reformas y la inversión inmobiliaria.</p>
+        <p>Hoy Nikko Eco es un grupo con <b>cuatro especialidades</b> que cuidan edificios en todas sus fases: del expediente al ladrillo, del ladrillo al activo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ 02 — QUÉ HACEMOS ════════════ -->
+  <section class="section light">
+    <div class="sec-bar">
+      <span class="num">02</span>
+      <span class="key">Qué hacemos</span>
+      <span class="lbl">Cuatro especialidades, <i>un mismo grupo.</i></span>
+    </div>
+    <div class="verts">
+      <div class="vert">
+        <span class="num">01 / B2B Compañías</span>
+        <h3><span class="nikko">Nikko</span> Seguros</h3>
+        <p>Gestión integral de expedientes para aseguradoras: tramitación, peritaje, reparación y cierre, todo bajo un mismo interlocutor. La operación que las compañías necesitan cuando el siniestro no espera.</p>
+        <span class="who">Aseguradoras · Peritos</span>
+      </div>
+      <div class="vert">
+        <span class="num">02 / Particulares y comunidades</span>
+        <h3><span class="nikko">Nikko</span> Hogar</h3>
+        <p>Reparación y mantenimiento para familias, vecinos y administradores. Solicitud online sencilla, técnico cualificado y cualquier gremio bajo el mismo paraguas. Disponible 24/7.</p>
+        <span class="who">Familias · Comunidades · Administradores</span>
+      </div>
+      <div class="vert">
+        <span class="num">03 / Proyectos cerrados</span>
+        <h3><span class="nikko">Nikko</span> Obras</h3>
+        <p>Reformas integrales, locales, oficinas y subcontrata para constructoras. Plan, presupuesto y ejecución con plazo cerrado y precio cerrado. Coordinación de todos los gremios bajo una misma garantía.</p>
+        <span class="who">Reformas · Comercios · Empresas · Constructoras</span>
+      </div>
+      <div class="vert">
+        <span class="num">04 / Inversión inmobiliaria</span>
+        <h3><span class="nikko">Nikko</span> Capital</h3>
+        <p>Selección, reforma y rentabilización de activos en todo el territorio nacional. La única especialidad del grupo en la que invertimos nuestro capital al lado del de los socios.</p>
+        <span class="who">Socios · Fondos · Patrimonios</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ 03 — POR QUÉ ════════════ -->
+  <section class="manifesto-wrap">
+    <p class="manifesto-eyebrow">03 · Por qué existimos · El manifiesto</p>
+    <p class="manifesto">
+      <span class="l">No nos gustan</span>
+      <span class="l">las cosas a medias.</span>
+      <span class="l dim">Ni las llamadas sin contestar.</span>
+      <span class="l dim">Ni los plazos sin cumplir.</span>
+      <span class="l">Ni los presupuestos sin cerrar.</span>
+      <span class="l em">Por eso existe Nikko.</span>
+    </p>
+  </section>
+
+  <!-- ════════════ 04 — LOS DOS CLAIMS ════════════ -->
+  <section class="section light">
+    <div class="sec-bar">
+      <span class="num">04</span>
+      <span class="key">Los dos claims</span>
+      <span class="lbl">Una voz, <i>dos registros.</i></span>
+    </div>
+    <div class="claims-grid">
+      <div class="claim-card primary">
+        <span class="role">Claim principal · corporativo</span>
+        <p class="big"><span class="l"><span class="you">Tus objetivos,</span></span><span class="l"><span class="us">nuestra meta.</span></span></p>
+        <p class="desc">La voz oficial de la marca paraguas. Habla de <b>resultado y compromiso</b>: tú tienes muchos objetivos, nosotros tenemos uno (tú). Tono corporativo, premium, B2B.</p>
+        <div class="use">Uso principal<br/><b>Marca madre Nikko Eco · Seguros · Capital</b><br/>Deck institucional · Web home · Inversores · Aseguradoras</div>
+      </div>
+      <div class="claim-card secondary">
+        <span class="role">Claim secundario · oficio</span>
+        <p class="big"><span class="l"><span class="you">Tus metas,</span></span><span class="l"><span class="us">nuestro oficio.</span></span></p>
+        <p class="desc">La voz del taller. Misma estructura, otra textura: <b>"metas" eleva, "oficio" baja al gremio</b>. Tono cálido, artesanal, español premium. Para cuando el cliente pone una llave en la cerradura.</p>
+        <div class="use">Uso principal<br/><b>Hogar · Obras · Comunidades</b><br/>Furgonetas · Tarjetas · Folletos · Comunicación directa al usuario final</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ 05 — PRINCIPIOS ════════════ -->
+  <section class="section dark">
+    <div class="sec-bar">
+      <span class="num">05</span>
+      <span class="key">Cinco principios</span>
+      <span class="lbl">Cómo trabajamos, <i>en cinco verbos.</i></span>
+    </div>
+    <div class="principios">
+      <div class="principio">
+        <span class="num">i</span>
+        <h4>Aparecemos<span class="stop">.</span></h4>
+        <p>Cuando dijimos. Donde dijimos. El primer pacto. Sin excepciones, sin "la semana que viene".</p>
+        <span class="ex">"Llegamos cuando habíamos quedado."</span>
+      </div>
+      <div class="principio">
+        <span class="num">ii</span>
+        <h4>Cumplimos<span class="stop">.</span></h4>
+        <p>Lo prometido es deuda. Plazo, presupuesto y alcance no se mueven sin avisar antes.</p>
+        <span class="ex">"Lo que prometimos, en plazo."</span>
+      </div>
+      <div class="principio">
+        <span class="num">iii</span>
+        <h4>Cuidamos<span class="stop">.</span></h4>
+        <p>Tratamos cada metro como si fuese nuestro. Y muchas veces, lo es: Capital invierte donde Hogar trabaja.</p>
+        <span class="ex">"Lo dejamos como lo encontramos. Mejor."</span>
+      </div>
+      <div class="principio">
+        <span class="num">iv</span>
+        <h4>Medimos<span class="stop">.</span></h4>
+        <p>Lo que no se mide no mejora. Datos, expedientes, fotos, tiempos. Sin trampas, sin opacidad.</p>
+        <span class="ex">"Expediente cerrado, sin sorpresas."</span>
+      </div>
+      <div class="principio">
+        <span class="num">v</span>
+        <h4>Hablamos<span class="stop">.</span></h4>
+        <p>Sin jerga, sin letra pequeña, sin promesas vacías. En español claro, mirando a los ojos.</p>
+        <span class="ex">"Cuesta lo que vale. Y eso vale lo que cuesta."</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ 06 — VOZ ════════════ -->
+  <section class="section light">
+    <div class="sec-bar">
+      <span class="num">06</span>
+      <span class="key">Voz</span>
+      <span class="lbl">Cómo <i>suena</i> Nikko.</span>
+    </div>
+    <div class="voz">
+      <p class="voz-lede">Directos, sin adornos. Premium pero sin <i>postureo.</i> Españoles sin localismos. Operativos sin tecnicismos.</p>
+      <div class="voz-grid">
+        <div class="voz-card si"><p class="k">Aparecemos</p><p class="ex">Su técnico llega hoy.</p></div>
+        <div class="voz-card no"><p class="k">Promesa vacía</p><p class="ex">Le visitaremos lo antes posible.</p></div>
+
+        <div class="voz-card si"><p class="k">Lo concreto</p><p class="ex">Plazo cerrado. Presupuesto cerrado. IVA incluido.</p></div>
+        <div class="voz-card no"><p class="k">Lo vago</p><p class="ex">Plazo orientativo, presupuesto a confirmar.</p></div>
+
+        <div class="voz-card si"><p class="k">Persona</p><p class="ex">Un técnico nuestro te llama.</p></div>
+        <div class="voz-card no"><p class="k">Sistema</p><p class="ex">Su solicitud será atendida en breve.</p></div>
+
+        <div class="voz-card si"><p class="k">Honestidad</p><p class="ex">Si no llegamos a tiempo, te lo compensamos.</p></div>
+        <div class="voz-card no"><p class="k">Excusa</p><p class="ex">Por causas ajenas, ha habido retraso.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ 07 — HORIZONTE ════════════ -->
+  <section class="horizonte">
+    <p class="horizonte-eyebrow">07 · Horizonte · A dónde vamos</p>
+    <p class="horizonte-text">Que ningún edificio en España se quede solo cuando <i>nos necesite.</i><br/><br/><b>Y que cuando llegue Nikko, ya esté resuelto.</b></p>
+  </section>
+
+  <div class="footer">
+    <span><b>Nikko Eco</b> · Historia de marca · v0.1</span>
+    <span>Confidencial · Borrador interno</span>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,18 +1,24 @@
 # Nikko Eco — Web corporativa
 
-Web corporativa de **Nikko Eco** y plataforma base sobre la que se irán construyendo:
+Sitio corporativo de **Nikko Eco**, grupo de servicio inmobiliario integral con cuatro
+especialidades: Seguros, Hogar, Obras y Capital.
 
-1. Web corporativa (Home, Sobre nosotros, Servicios, Contacto). ✅ En curso.
-2. Landings de campaña (estructura preparada en `src/app/(landings)/`).
-3. Plantillas de email transaccional / comercial (`emails/`).
-4. Módulo de **solicitud y generación de presupuestos**.
+> **Tus objetivos, nuestra meta.**
+
+## Estado
+
+- [x] **Web corporativa** — Home, Servicios, Sobre nosotros, Contacto
+- [x] **Design System integrado** — tokens, Wordmark, SubMark, componentes UI
+- [ ] Landings de campaña (estructura preparada en `src/app/(landings)/`)
+- [ ] Plantillas de email (carpeta `emails/`)
+- [ ] Módulo de solicitud y generación de presupuestos
 
 ## Stack
 
 - [Next.js 16](https://nextjs.org/) (App Router, TypeScript)
-- [Tailwind CSS 4](https://tailwindcss.com/) con tokens de marca en `globals.css`
-- [pnpm](https://pnpm.io/) como gestor de paquetes
-- [next/font](https://nextjs.org/docs/app/api-reference/components/font) para la carga de tipografías
+- [Tailwind CSS 4](https://tailwindcss.com/) con tokens del DS
+- [`next/font`](https://nextjs.org/docs/app/api-reference/components/font) — Geist + Geist Mono + Fraunces
+- pnpm
 
 ## Puesta en marcha
 
@@ -20,41 +26,51 @@ Web corporativa de **Nikko Eco** y plataforma base sobre la que se irán constru
 pnpm install
 pnpm dev          # http://localhost:3000
 pnpm build        # build de producción
-pnpm typecheck    # comprobación de tipos
-pnpm lint         # ESLint
+pnpm typecheck
+pnpm lint
 ```
 
 ## Estructura
 
 ```
+design-system/           ← Design System oficial (entrega Claude Design, raw)
+├── tokens/              ← variables CSS de colores, tipografía, espaciado…
+├── components/          ← Wordmark, SubMark, Button, Card… (referencia)
+├── templates/           ← deck, presupuesto, firma email, business card, social
+├── readme.md            ← guía de marca completa
+└── Nikko-Eco-Manual-de-marca.html
+
 src/
 ├── app/
-│   ├── (marketing)/        # Páginas corporativas: sobre-nosotros, servicios, contacto
-│   ├── (landings)/         # Landings de campaña (estructura preparada)
-│   ├── layout.tsx          # Layout raíz (Header + Footer + fuentes + metadata)
-│   ├── page.tsx            # Home
-│   └── globals.css         # Tokens de marca (colores, fuentes)
+│   ├── (marketing)/     ← Páginas corporativas
+│   ├── (landings)/      ← Landings de campaña (preparado)
+│   ├── layout.tsx       ← Root layout (fuentes oficiales, metadata)
+│   ├── page.tsx         ← Home
+│   └── globals.css      ← Importa tokens desde design-system/
 ├── components/
-│   ├── layout/             # Header, Footer
-│   ├── sections/           # Hero, Services, About, CTA
-│   └── ui/                 # Componentes UI reutilizables (vacío por ahora)
+│   ├── brand/           ← Wordmark, SubMark (TSX)
+│   ├── layout/          ← Header, Footer
+│   ├── sections/        ← Hero, SubBrandsGrid, Principles, CTA
+│   └── ui/              ← Button, Eyebrow
 └── lib/
-    └── brand.ts            # Configuración única de marca (nombre, claim, contacto)
-public/
-└── brand/                  # Logo, isotipo y assets de identidad
-emails/                     # Plantillas de email (próximamente React Email)
-docs/
-└── BRAND.md                # Cómo aplicar la identidad de Claude Design
+    └── brand.ts         ← Nombre, claim, contacto, sub-marcas, principios
+
+public/brand/            ← Isotipos light / dark / mono (SVG)
+emails/                  ← Plantillas de email (próximamente)
 ```
 
-## Identidad de marca
+## Reglas no negociables de la marca
 
-La identidad visual se está creando con **Claude Design**.
-Una vez se reciban los assets definitivos (logo, paleta, tipografías y guía):
+Source: `design-system/SKILL.md`
 
-1. Sustituir los archivos de `public/brand/`.
-2. Actualizar los tokens de color en `src/app/globals.css`.
-3. Cambiar las tipografías en `src/app/layout.tsx`.
-4. Ajustar el copy global en `src/lib/brand.ts`.
-
-Toda la guía detallada está en [`docs/BRAND.md`](docs/BRAND.md).
+1. **Claim principal**: *"Tus objetivos, nuestra meta."* — voz corporativa.
+   **Claim secundario**: *"Tus metas, nuestro oficio."* — voz del taller (Hogar / Obras).
+2. **Wordmark**: "Nikko" en Geist bold + "Eco." en italic Fraunces ámbar. Nunca en
+   dos líneas. El punto final siempre se mantiene.
+3. **Sub-marcas**: solo "Nikko Seguros / Hogar / Obras / Capital". "Eco" aparece
+   **únicamente** en la marca paraguas.
+4. **Paleta**: Tinta + Hueso + Ámbar. Un único acento cálido. No inventes colores.
+5. **Tipografía**: Geist (sans) + Fraunces (serif, *siempre en italic*) + Geist Mono.
+   Tracking negativo agresivo en display (-0.055em). Un titular = una sola familia.
+6. **Esquinas casi rectas**. Pills sólo para badges.
+7. **Voz**: directa, sin adornos, premium sin postureo. Nada de "lo antes posible".

@@ -1,29 +1,67 @@
 import type { Metadata } from "next";
-import { Services } from "@/components/sections/Services";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { SubMark } from "@/components/brand/SubMark";
+import { LinkButton } from "@/components/ui/Button";
 import { CTA } from "@/components/sections/CTA";
+import { subBrands } from "@/lib/brand";
 
 export const metadata: Metadata = {
   title: "Servicios",
   description:
-    "Servicios de Nikko Eco: gestión de residuos, eficiencia energética, consultoría ambiental y obra sostenible.",
+    "Las cuatro especialidades de Nikko Eco: Seguros, Hogar, Obras y Capital. Una sola interlocución, expediente único.",
 };
 
 export default function ServiciosPage() {
   return (
     <>
-      <section className="mx-auto max-w-3xl px-6 py-24">
-        <p className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-brand">
-          Servicios
-        </p>
-        <h1 className="mt-3 font-display text-4xl font-bold text-brand-secondary md:text-5xl">
-          Todo lo que tu empresa necesita para avanzar en sostenibilidad.
-        </h1>
-        <p className="mt-6 text-lg text-brand-muted">
-          Soluciones ejecutables, medibles y conformes a la normativa
-          vigente. Pídenos presupuesto sin compromiso.
-        </p>
+      <section className="bg-bone-300">
+        <div className="mx-auto max-w-3xl px-6 pb-16 pt-24 md:pt-32">
+          <Eyebrow>Servicios</Eyebrow>
+          <h1
+            className="mt-6 font-sans font-bold text-ink-900"
+            style={{ fontSize: "clamp(42px, 6vw, 72px)", lineHeight: 0.95, letterSpacing: "-0.045em" }}
+          >
+            Cuatro <span className="font-serif italic font-light text-amber-600">oficios.</span>
+            <br /> Una sola <span className="font-serif italic font-light text-amber-600">interlocución.</span>
+          </h1>
+          <p className="mt-6 text-[17px] leading-[1.6] text-ink-800/85">
+            Cada especialidad de Nikko es un equipo técnico propio. Coordinamos
+            internamente para que tú trates con una sola persona.
+          </p>
+        </div>
       </section>
-      <Services />
+
+      <section className="bg-bone-300">
+        <div className="mx-auto max-w-6xl px-6 pb-24">
+          <ul className="grid gap-px overflow-hidden border border-border-soft bg-border-soft md:grid-cols-2">
+            {subBrands.map((s) => (
+              <li
+                key={s.slug}
+                id={s.slug}
+                className="scroll-mt-24 bg-bone-200 p-10 md:p-12"
+              >
+                <SubMark brand={s.name as "Seguros" | "Hogar" | "Obras" | "Capital"} size="lg" tone="dark" />
+                <p className="mt-3 font-mono text-[10.5px] uppercase tracking-[0.22em] text-ink-400">
+                  {s.audience}
+                </p>
+                <p className="mt-6 text-[17px] leading-[1.6] text-ink-800/85">
+                  {s.summary}
+                </p>
+                <div className="mt-8">
+                  <LinkButton
+                    href="/contacto"
+                    variant="outline"
+                    size="md"
+                  >
+                    Pedir presupuesto
+                  </LinkButton>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <CTA />
     </>
   );

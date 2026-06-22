@@ -1,47 +1,52 @@
 import Link from "next/link";
-import { brand } from "@/lib/brand";
+import { Wordmark } from "@/components/brand/Wordmark";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { brand, subBrands } from "@/lib/brand";
 
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-brand-line bg-brand-soft">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:grid-cols-3">
+    <footer className="bg-ink-800 text-bone-300">
+      <div className="mx-auto grid max-w-6xl gap-14 px-6 py-20 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <p className="font-display text-lg font-semibold text-brand-secondary">
-            {brand.name}
-          </p>
-          <p className="mt-2 max-w-xs text-sm text-brand-muted">
+          <Wordmark size="md" tone="light" />
+          <p className="mt-5 max-w-xs font-serif italic font-light text-[18px] leading-snug text-bone-300/70">
             {brand.claim}
           </p>
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wider text-brand-secondary">
-            Navegación
-          </p>
-          <ul className="mt-3 space-y-2 text-sm">
+          <Eyebrow tone="inverse">Marcas</Eyebrow>
+          <ul className="mt-4 space-y-2 text-sm">
+            {subBrands.map((s) => (
+              <li key={s.slug}>
+                <Link
+                  href={`/servicios#${s.slug}`}
+                  className="text-bone-300/85 hover:text-amber-400 transition-colors"
+                >
+                  Nikko {s.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <Eyebrow tone="inverse">Navegación</Eyebrow>
+          <ul className="mt-4 space-y-2 text-sm">
             <li>
-              <Link
-                href="/sobre-nosotros"
-                className="text-brand-ink/80 hover:text-brand"
-              >
-                Sobre nosotros
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/servicios"
-                className="text-brand-ink/80 hover:text-brand"
-              >
+              <Link href="/servicios" className="text-bone-300/85 hover:text-amber-400">
                 Servicios
               </Link>
             </li>
             <li>
-              <Link
-                href="/contacto"
-                className="text-brand-ink/80 hover:text-brand"
-              >
+              <Link href="/sobre-nosotros" className="text-bone-300/85 hover:text-amber-400">
+                Sobre nosotros
+              </Link>
+            </li>
+            <li>
+              <Link href="/contacto" className="text-bone-300/85 hover:text-amber-400">
                 Contacto
               </Link>
             </li>
@@ -49,12 +54,10 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wider text-brand-secondary">
-            Contacto
-          </p>
-          <ul className="mt-3 space-y-2 text-sm text-brand-ink/80">
+          <Eyebrow tone="inverse">Contacto</Eyebrow>
+          <ul className="mt-4 space-y-2 text-sm text-bone-300/85">
             <li>
-              <a href={`mailto:${brand.contact.email}`} className="hover:text-brand">
+              <a href={`mailto:${brand.contact.email}`} className="hover:text-amber-400">
                 {brand.contact.email}
               </a>
             </li>
@@ -64,10 +67,10 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-brand-line">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-4 text-xs text-brand-muted md:flex-row">
+      <div className="border-t border-border-inverse">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-5 text-[11px] font-mono uppercase tracking-[0.22em] text-bone-300/45 md:flex-row">
           <p>© {year} {brand.name}. Todos los derechos reservados.</p>
-          <p>Aviso legal · Política de privacidad · Cookies</p>
+          <p>Aviso legal · Privacidad · Cookies</p>
         </div>
       </div>
     </footer>

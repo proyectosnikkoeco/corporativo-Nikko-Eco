@@ -1,0 +1,29 @@
+<!-- @dsCard group="Spacing" viewport="700x220" name="Escala de espaciado" subtitle="Base 4px · 2 a 96px" -->
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { background: var(--bone-200); padding: 24px 28px; color: var(--ink-800); }
+  .row { display: flex; flex-direction: column; gap: 6px; }
+  .item { display: grid; grid-template-columns: 110px 1fr 60px; gap: 14px; align-items: center; }
+  .k { font-family: var(--font-meta); font-size: 10px; letter-spacing: var(--ls-mono-sm); text-transform: uppercase; color: var(--ink-400); }
+  .bar { background: var(--amber-400); height: 10px; }
+  .v { font-family: var(--font-mono); font-size: 11px; color: var(--ink-400); text-align: right; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="item"><span class="k">space-2</span><span class="bar" style="width: 4px;"></span><span class="v">4 px</span></div>
+    <div class="item"><span class="k">space-3</span><span class="bar" style="width: 8px;"></span><span class="v">8 px</span></div>
+    <div class="item"><span class="k">space-4</span><span class="bar" style="width: 12px;"></span><span class="v">12 px</span></div>
+    <div class="item"><span class="k">space-5</span><span class="bar" style="width: 16px;"></span><span class="v">16 px</span></div>
+    <div class="item"><span class="k">space-7</span><span class="bar" style="width: 24px;"></span><span class="v">24 px</span></div>
+    <div class="item"><span class="k">space-8</span><span class="bar" style="width: 32px;"></span><span class="v">32 px</span></div>
+    <div class="item"><span class="k">space-10</span><span class="bar" style="width: 48px;"></span><span class="v">48 px</span></div>
+    <div class="item"><span class="k">space-12</span><span class="bar" style="width: 64px;"></span><span class="v">64 px</span></div>
+    <div class="item"><span class="k">space-14</span><span class="bar" style="width: 96px;"></span><span class="v">96 px</span></div>
+  </div>
+</body>
+</html>

@@ -1,47 +1,98 @@
 @import "tailwindcss";
 
-/**
- * Tokens de marca — Nikko Eco
- * Estos valores son placeholders. Cuando llegue la guía de Claude Design,
- * reemplazar los HEX por los definitivos y todo el sitio se actualizará.
- */
+/* ============================================================
+   Tokens de marca — Nikko Eco
+   Fuente única de verdad: ../../design-system/tokens/
+   Estos imports cargan los tokens oficiales del design system.
+   ============================================================ */
+@import "../../design-system/tokens/colors.css";
+@import "../../design-system/tokens/typography.css";
+@import "../../design-system/tokens/spacing.css";
+@import "../../design-system/tokens/radius.css";
+@import "../../design-system/tokens/shadows.css";
+@import "../../design-system/tokens/motion.css";
+
+/* Las fuentes se cargan vía next/font en layout.tsx (no @import) para
+   aprovechar la optimización del bundler. Aquí solo enlazamos las
+   variables CSS que expone next/font con los tokens del DS. */
 :root {
-  /* Paleta principal (placeholder eco-green) */
-  --brand-primary: #2f7d4f;
-  --brand-primary-contrast: #ffffff;
-  --brand-secondary: #1a3b2e;
-  --brand-accent: #c9e265;
+  --font-sans: var(--font-geist), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-serif: var(--font-fraunces), "Georgia", "Times New Roman", serif;
+  --font-mono: var(--font-geist-mono), "JetBrains Mono", ui-monospace, "Menlo", monospace;
 
-  /* Neutros */
-  --brand-ink: #0f1a14;
-  --brand-muted: #5b6b62;
-  --brand-soft: #f4f7f2;
-  --brand-line: #e3e9e3;
-
-  /* Superficies */
-  --background: #ffffff;
-  --foreground: var(--brand-ink);
+  /* Tema general */
+  --background: var(--surface-base);
+  --foreground: var(--text-body);
 }
 
+/* Exposición de tokens como utilidades de Tailwind */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-brand: var(--brand-primary);
-  --color-brand-contrast: var(--brand-primary-contrast);
-  --color-brand-secondary: var(--brand-secondary);
-  --color-brand-accent: var(--brand-accent);
-  --color-brand-ink: var(--brand-ink);
-  --color-brand-muted: var(--brand-muted);
-  --color-brand-soft: var(--brand-soft);
-  --color-brand-line: var(--brand-line);
 
-  --font-sans: var(--font-brand-sans);
-  --font-display: var(--font-brand-display);
+  --color-ink-900: var(--ink-900);
+  --color-ink-800: var(--ink-800);
+  --color-ink-700: var(--ink-700);
+  --color-ink-600: var(--ink-600);
+  --color-ink-500: var(--ink-500);
+  --color-ink-400: var(--ink-400);
+  --color-ink-300: var(--ink-300);
+  --color-ink-200: var(--ink-200);
+  --color-ink-100: var(--ink-100);
+
+  --color-bone-100: var(--bone-100);
+  --color-bone-200: var(--bone-200);
+  --color-bone-300: var(--bone-300);
+  --color-bone-400: var(--bone-400);
+
+  --color-amber-300: var(--amber-300);
+  --color-amber-400: var(--amber-400);
+  --color-amber-500: var(--amber-500);
+  --color-amber-600: var(--amber-600);
+  --color-amber-700: var(--amber-700);
+
+  --color-surface-base: var(--surface-base);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-inverse: var(--surface-inverse);
+  --color-surface-inverse-2: var(--surface-inverse-2);
+  --color-surface-accent: var(--surface-accent);
+
+  --color-text-strong: var(--text-strong);
+  --color-text-body: var(--text-body);
+  --color-text-muted: var(--text-muted);
+  --color-text-inverse: var(--text-inverse);
+  --color-text-on-accent: var(--text-on-accent);
+  --color-text-accent: var(--text-accent);
+
+  --color-border-soft: var(--border-soft);
+  --color-border-strong: var(--border-strong);
+  --color-border-inverse: var(--border-inverse);
+  --color-border-accent: var(--border-accent);
+
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
+
+  --radius-none: var(--radius-0);
+  --radius-xs: var(--radius-1);
+  --radius-sm: var(--radius-2);
+  --radius-md: var(--radius-3);
+  --radius-lg: var(--radius-4);
+  --radius-pill: var(--radius-pill);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-brand-sans), system-ui, sans-serif;
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--amber-400);
+  color: var(--ink-900);
 }

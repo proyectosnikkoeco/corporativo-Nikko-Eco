@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Email signature" description="Firma de correo HTML lista para pegar en Gmail/Outlook" -->
+<helmet>
+  <script src="./ds-base.js"></script>
+</helmet>
+
+<div style="background:#F6F4ED; min-height:100vh; padding:64px 48px; font-family:'Geist', sans-serif;">
+
+  <p style="font-family:'Geist Mono', monospace; font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:rgba(10,14,26,0.55); margin:0 0 32px; text-align:center;">Email signature · vista previa en cliente de correo</p>
+
+  <!-- Email client mockup -->
+  <div style="max-width:680px; margin:0 auto; background:#FFFFFF; border:1px solid rgba(10,14,26,0.1); border-radius:6px; overflow:hidden; box-shadow:0 12px 32px rgba(0,0,0,0.08);">
+
+    <!-- Email header bar -->
+    <div style="background:#F0EEE7; padding:14px 22px; border-bottom:1px solid rgba(10,14,26,0.08); display:flex; gap:8px; align-items:center;">
+      <div style="width:10px; height:10px; border-radius:50%; background:#E64C42;"></div>
+      <div style="width:10px; height:10px; border-radius:50%; background:#F2BE43;"></div>
+      <div style="width:10px; height:10px; border-radius:50%; background:#5BB85B;"></div>
+      <p style="margin:0 0 0 16px; font-family:system-ui, sans-serif; font-size:12px; color:#5A6573;">Re: Presupuesto reforma local</p>
+    </div>
+
+    <!-- Email body -->
+    <div style="padding:32px 36px; color:#1A1A1A;">
+      <p style="font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height:1.55; margin:0 0 14px; color:#1A1A1A;">Hola María,</p>
+      <p style="font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height:1.55; margin:0 0 14px; color:#1A1A1A;">Te adjunto el presupuesto cerrado por la reforma del local de Calle Ejemplo 14. Plazo 14 semanas desde el inicio de obra.</p>
+      <p style="font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height:1.55; margin:0 0 8px; color:#1A1A1A;">Cualquier duda, me llamas.</p>
+      <p style="font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height:1.55; margin:0 0 24px; color:#1A1A1A;">Gracias,</p>
+
+      <!-- ═════════ SIGNATURE — copy this part ═════════ -->
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; font-family:Arial, Helvetica, sans-serif;">
+        <tr>
+          <td style="padding-right:24px; border-right:2px solid #F0B73E; vertical-align:top;">
+            <div style="font-family:Arial, Helvetica, sans-serif; font-weight:700; letter-spacing:-0.04em; line-height:1; font-size:26px; color:#0A0E1A;">Nikko<span style="font-family:Georgia, 'Times New Roman', serif; font-style:italic; font-weight:400; font-size:0.6em; color:#C78122; margin-left:1px;">Eco.</span></div>
+            <div style="font-family:Arial, Helvetica, sans-serif; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#8A92A0; margin-top:6px; font-weight:600;">Servicio inmobiliario integral</div>
+          </td>
+          <td style="padding-left:24px; vertical-align:top;">
+            <div style="font-family:Arial, Helvetica, sans-serif; font-weight:700; font-size:15px; color:#0A0E1A; letter-spacing:-0.01em; line-height:1.2;">Nombre Apellido</div>
+            <div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#4A5566; margin-top:3px; line-height:1.4;">CEO · Nikko Eco</div>
+            <div style="margin-top:10px; font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:1.5;">
+              <a href="mailto:info@nikkoeco.com" style="color:#1A1A1A; text-decoration:none; border-bottom:1px solid rgba(10,14,26,0.2);">info@nikkoeco.com</a>
+              <span style="color:#8A92A0; margin:0 6px;">·</span>
+              <a href="https://nikkoeco.com" style="color:#C78122; text-decoration:none; font-weight:600;">nikkoeco.com</a>
+            </div>
+            <div style="margin-top:12px; font-family:Georgia, 'Times New Roman', serif; font-style:italic; font-size:12px; color:#C78122; letter-spacing:-0.005em;">Tus objetivos, nuestra meta.</div>
+          </td>
+        </tr>
+      </table>
+      <!-- ═════════ END signature ═════════ -->
+
+    </div>
+  </div>
+
+  <p style="text-align:center; font-family:'Geist Mono', monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(10,14,26,0.5); margin:32px 0 0; line-height:1.6;">Usa fuentes web-safe (Arial / Georgia). Para pegar:<br/>copia el bloque entre los marcadores <span style="color:#C78122; font-weight:600;">═ signature ═</span> en el HTML de tu cliente de correo.</p>
+
+</div>
+
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Deck corporativo Nikko Eco" description="Plantilla de presentación corporativa 16:9 con todos los tipos de slide del sistema" -->
+<helmet>
+  <script src="./ds-base.js"></script>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+  <!-- ═════════ 01 · PORTADA ═════════ -->
+  <section data-label="Portada" style="position:relative; width:100%; height:100%; background:#0A0E1A; color:#EFEDE6; padding:120px 140px; display:flex; flex-direction:column; justify-content:space-between; overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; right:-260px; top:-160px; width:900px; height:900px; background:radial-gradient(circle, rgba(240,183,62,0.12), transparent 60%); pointer-events:none;"></div>
+
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; position:relative; z-index:1;">
+      <p style="font-family:'Geist Mono', monospace; font-size:14px; letter-spacing:0.24em; text-transform:uppercase; color:#F0B73E; margin:0; display:flex; align-items:center; gap:14px;"><span style="display:inline-block; width:32px; height:1px; background:#F0B73E;"></span>Presentación corporativa</p>
+      <p style="font-family:'Geist Mono', monospace; font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(239,237,230,0.5); margin:0; text-align:right; line-height:1.7;">NKK / DECK-CORP<br/>Junio · 2026</p>
+    </div>
+
+    <div style="position:relative; z-index:1;">
+      <span style="font-family:'Geist', sans-serif; font-weight:700; letter-spacing:-0.06em; line-height:0.86; font-size:160px; color:#EFEDE6; display:inline-flex; align-items:flex-end; gap:8px; margin-bottom:48px;">Nikko<span style="font-family:'Fraunces', serif; font-style:italic; font-weight:300; font-size:0.55em; color:#F0B73E; letter-spacing:-0.04em; margin-bottom:0.06em; line-height:1;">Eco.</span></span>
+
+      <p style="font-family:'Geist', sans-serif; font-weight:700; font-size:96px; line-height:0.95; letter-spacing:-0.055em; margin:0; color:#EFEDE6;"><span style="color:rgba(239,237,230,0.55); display:block;">Tus objetivos,</span><span style="color:#F0B73E; display:block;">nuestra meta.</span></p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:48px; padding-top:36px; border-top:1px solid rgba(239,237,230,0.15); position:relative; z-index:1;">
+      <div><p style="font-family:'Geist Mono', monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(239,237,230,0.5); margin:0 0 10px;">Categoría</p><p style="font-family:'Geist', sans-serif; font-weight:600; font-size:18px; letter-spacing:-0.02em; color:#EFEDE6; margin:0;">Servicio inmobiliario integral</p></div>
+      <div><p style="font-family:'Geist Mono', monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(239,237,230,0.5); margin:0 0 10px;">Territorio</p><p style="font-family:'Geist', sans-serif; font-weight:600; font-size:18px; letter-spacing:-0.02em; color:#EFEDE6; margin:0;">Cobertura nacional</p></div>
+      <div><p style="font-family:'Geist Mono', monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(239,237,230,0.5); margin:0 0 10px;">Operación</p><p style="font-family:'Geist', sans-serif; font-weight:600; font-size:18px; letter-spacing:-0.02em; color:#EFEDE6; margin:0;">Servicio continuo · 24/7</p></div>
+      <div><p style="font-family:'Geist Mono', monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(239,237,230,0.5); margin:0 0 10px;">Estructura</p><p style="font-family:'Geist', sans-serif; font-weight:600; font-size:18px; letter-spacing:-0.02em; color:#EFEDE6; margin:0;">Grupo · 4 especialidades</p></div>
+    </div>
+  </section>
+
+  <!-- ═════════ 02 · DIVIDER ═════════ -->
+  <section data-label="Section divider" style="position:relative; width:100%; height:100%; background:#F0B73E; color:#0A0E1A; padding:140px; display:flex; flex-direction:column; justify-content:space-between;">
+    <p style="font-family:'Geist Mono', monospace; font-size:14px; letter-spacing:0.24em; text-transform:uppercase; color:#0A0E1A; margin:0; display:flex; align-items:center; gap:14px;"><span style="display:inline-block; width:32px; height:1px; background:#0A0E1A;"></span>Capítulo 01</p>
+
+    <div>
+      <p style="font-family:'Fraunces', serif; font-weight:300; font-style:italic; font-size:48px; color:rgba(10,14,26,0.55); margin:0 0 24px; letter-spacing:-0.025em; line-height:1;">El por qué.</p>
+      <h2 style="font-family:'Geist', sans-serif; font-weight:700; font-size:200px; line-height:0.9; letter-spacing:-0.06em; margin:0; color:#0A0E1A;">Quiénes<br/>somos.</h2>
+    </div>
+
+    <p style="font-family:'Geist Mono', monospace; font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(10,14,26,0.55); margin:0;">Nikko Eco · Identidad corporativa</p>
+  </section>
+
+  <!-- ═════════ 03 · MANIFIESTO ═════════ -->
+  <section data-label="Manifiesto" style="position:relative; width:100%; height:100%; background:#0A0E1A; color:#EFEDE6; padding:140px; display:flex; flex-direction:column; justify-content:center; overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; left:-260px; bottom:-200px; width:900px; height:900px; background:radial-gradient(circle, rgba(240,183,62,0.10), transparent 60%); pointer-events:none;"></div>
+
+    <p style="font-family:'Geist Mono', monospace; font-size:14px; letter-spacing:0.24em; text-transform:uppercase; color:#F0B73E; margin:0 0 60px; display:flex; align-items:center; gap:14px; position:relative; z-index:1;"><span style="display:inline-block; width:32px; height:1px; background:#F0B73E;"></span>Manifiesto · Por qué existimos</p>
+
+    <p style="font-family:'Geist', sans-serif; font-weight:700; font-size:108px; line-height:1.0; letter-spacing:-0.055em; margin:0; color:#EFEDE6; position:relative; z-index:1; max-width:1500px;">
+      <span style="display:block;">No nos gustan</span>
+      <span style="display:block;">las cosas a medias.</span>
+      <span style="display:block; color:rgba(239,237,230,0.45);">Ni las llamadas sin contestar.</span>
+      <span style="display:block; color:rgba(239,237,230,0.45);">Ni los plazos sin cumplir.</span>
+      <span style="display:block; color:#F0B73E;">Por eso existe Nikko.</span>
+    </p>
+  </section>
+
+  <!-- ═════════ 04 · QUOTE / BIG IDEA ═════════ -->
+  <section data-label="Big idea" style="position:relative; width:100%; height:100%; background:#EFEDE6; color:#0A0E1A; padding:140px; display:flex; flex-direction:column; justify-content:center; overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; right:-200px; top:-100px; width:700px; height:700px; background:radial-gradient(circle, rgba(232,156,46,0.18), transparent 60%); pointer-events:none;"></div>
+
+    <p style="font-family:'Geist Mono', monospace; font-size:14px; letter-spacing:0.24em; text-transform:uppercase; color:#E89C2E; margin:0 0 56px; display:flex; align-items:center; gap:14px; position:relative; z-index:1;"><span style="display:inline-block; width:32px; height:1px; background:#E89C2E;"></span>Idea fundacional</p>
+
+    <p style="font-family:'Fraunces', serif; font-weight:300; font-size:108px; line-height:1.0; letter-spacing:-0.035em; margin:0; color:#0A0E1A; position:relative; z-index:1; max-width:1500px;">El tiempo es la única materia prima <span style="font-style:italic; color:#C78122;">honesta</span> de este sector.</p>
+
+    <p style="font-family:'Geist', sans-serif; font-size:24px; line-height:1.4; color:rgba(10,14,26,0.6); margin:48px 0 0; max-width:900px; position:relative; z-index:1;">Cuando un edificio falla, el reloj no se detiene. Ni para la familia, ni para el perito, ni para el administrador.</p>
+  </section>
+
+  <!-- ═════════ 05 · DOS COLUMNAS ═════════ -->
+  <section data-label="Dos columnas" style="position:relative; width:100%; height:100%; background:#EFEDE6; color:#0A0E1A; padding:120px 140px; display:flex; flex-direction:column;">
+    <p style="font-family:'Geist Mono', monospace; font-size:14px; letter-spacing:0.24em; text-transform:uppercase; color:#E89C2E; margin:0 0 36px; display:flex; align-items:center; gap:14px;"><span style="display:inline-block; width:32px; height:1px; background:#E89C2E;"></span>02 · Qué hacemos</p>
+
+    <h3 style="font-family:'Fraunces', serif; font-weight:300; font-size:84px; line-height:0.98; letter-spacing:-0.03em; margin:0 0 64px; color:#0A0E1A;">Cuatro especialidades, <span style="font-style:italic; color:#C78122;">un mismo grupo.</span></h3>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; flex:1;">
+      <div>
+        <p style="font-family:'Geist', sans-serif; font-size:22px; line-height:1.55; color:#0A0E1A; margin:0 0 24px;">Nikko Eco cuida edificios en todas sus fases: del expediente al ladrillo, del ladrillo al activo.</p>
+        <p style="font-family:'Geist', sans-serif; font-size:22px; line-height:1.55; color:rgba(10,14,26,0.7); margin:0;">Una sola compañía. Cuatro especialidades. La misma operativa, los mismos plazos y la misma disciplina en todas.</p>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        <div style="border-left:3px solid #F0B73E; padding:8px 0 8px 24px;">
+          <p style="font-family:'Geist', sans-serif; font-weight:700; font-size:28px; letter-spacing:-0.03em; margin:0 0 6px;">Nikko <span style="color:#C78122; font-weight:500;">Seguros</span></p>
+          <p style="font-family:'Geist', sans-serif; font-size:16px; color:rgba(10,14,26,0.7); margin:0;">Gestión integral de expedientes para aseguradoras.</p>
+        </div>
+        <div style="border-left:3px solid #F0B73E; padding:8px 0 8px 24px;">
+          <p style="font-family:'Geist', sans-serif; font-weight:700; font-size:28px; letter-spacing:-0.03em; margin:0 0 6px;">Nikko <span style="color:#C78122; font-weight:500;">Hogar</span></p>
+          <p style="font-family:'Geist', sans-serif; font-size:16px; color:rgba(10,14,26,0.7); margin:0;">Reparación y mantenimiento para familias y comunidades.</p>
+        </div>
+        <div style="border-left:3px solid #F0B73E; padding:8px 0 8px 24px;">
+          <p style="font-family:'Geist', sans-serif; font-weight:700; font-size:28px; letter-spacing:-0.03em; margin:0 0 6px;">Nikko <span style="color:#C78122; font-weight:500;">Obras</span></p>
+          <p style="font-family:'Geist', sans-serif; font-size:16px; color:rgba(10,14,26,0.7); margin:0;">Reformas integrales con plazo y precio cerrados.</p>
+        </div>
+        <div style="border-left:3px solid #F0B73E; padding:8px 0 8px 24px;">
+          <p style="font-family:'Geist', sans-serif; font-weight:700; font-size:28px; letter-spacing:-0.03em; margin:0 0 6px;">Nikko <span style="color:#C78122; font-weight:500;">Capital</span></p>
+          <p style="font-family:'Geist', sans-serif; font-size:16px; color:rgba(10,14,26,0.7); margin:0;">Inversión inmobiliaria con el capital del propio grupo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════ 06 · STATS / NÚMEROS ═════════ -->
+  <section data-label="Stats" style="position:relative; width:100%; height:100%; background:#0A0E1A; color:#EFEDE6; padding:120px 140px; display:flex; flex-direction:column; justify-content:center; overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; left:-200px; top:-100px; width:700px; height:700px; background:radial-gradient(circle, rgba(240,183,62,0.10), transparent 60%); pointer-events:none;"></div>
+
+    <p style="font-family:'Geist Mono', monospace; font-size:14px; letter-spacing:0.24em; text-transform:uppercase; color:#F0B73E; margin:0 0 56px; display:flex; align-items:center; gap:14px; position:relative; z-index:1;"><span style="display:inline-block; width:32px; height:1px; background:#F0B73E;"></span>03 · La operación en cifras</p>
+
+    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0; border-top:1px solid rgba(239,237,230,0.18); position:relative; z-index:1;">
+      <div style="padding:48px 48px 0 0; border-right:1px solid rgba(239,237,230,0.18);">
+        <p style="font-family:'Geist', sans-serif; font-weight:700; font-size:144px; line-height:0.9; letter-spacing:-0.055em; margin:0 0 16px; color:#F0B73E;">24/7</p>
+        <p style="font-family:'Geist', sans-serif; font-size:20px; line-height:1.35; color:rgba(239,237,230,0.7); margin:0;">Servicio continuo, incluidas urgencias.</p>
+      </div>
+      <div style="padding:48px; border-right:1px solid rgba(239,237,230,0.18);">
+        <p style="font-family:'Geist', sans-serif; font-weight:700; font-size:144px; line-height:0.9; letter-spacing:-0.055em; margin:0 0 16px; color:#F0B73E;">04</p>
+        <p style="font-family:'Geist', sans-serif; font-size:20px; line-height:1.35; color:rgba(239,237,230,0.7); margin:0;">Especialidades bajo el mismo paraguas.</p>
+      </div>
+      <div style="padding:48px 0 0 48px;">
+        <p style="font-family:'Geist', sans-serif; font-weight:700; font-size:144px; line-height:0.9; letter-spacing:-0.055em; margin:0 0 16px; color:#F0B73E;">01</p>
+        <p style="font-family:'Geist', sans-serif; font-size:20px; line-height:1.35; color:rgba(239,237,230,0.7); margin:0;">Único interlocutor desde la solicitud al cierre.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════ 07 · PRINCIPIOS ═════════ -->
+  <section data-label="Principios" style="position:relative; width:100%; height:100%; background:#EFEDE6; color:#0A0E1A; padding:120px 140px; display:flex; flex-direction:column;">
+    <p style="font-family:'Geist Mono', monospace; font-size:14px; letter-spacing:0.24em; text-transform:uppercase; color:#E89C2E; margin:0 0 32px; display:flex; align-items:center; gap:14px;"><span style="display:inline-block; width:32px; height:1px; background:#E89C2E;"></span>04 · Cómo trabajamos</p>
+
+    <h3 style="font-family:'Fraunces', serif; font-weight:300; font-size:72px; line-height:1; letter-spacing:-0.03em; margin:0 0 80px; color:#0A0E1A;">Cinco principios, <span style="font-style:italic; color:#C78122;">en cinco verbos.</span></h3>
+
+    <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:0; border-top:1px solid rgba(10,14,26,0.15); flex:1;">
+      <div style="padding:40px 28px 0 0; border-right:1px solid rgba(10,14,26,0.15); display:flex; flex-direction:column; gap:18px;">
+        <p style="font-family:'Fraunces', serif; font-style:italic; font-weight:300; font-size:36px; color:#C78122; margin:0; line-height:1;">i</p>
+        <h4 style="font-family:'Geist', sans-serif; font-weight:700; font-size:38px; letter-spacing:-0.04em; margin:0; color:#0A0E1A;">Aparecemos<span style="color:#C78122;">.</span></h4>
+        <p style="font-family:'Geist', sans-serif; font-size:16px; line-height:1.5; color:rgba(10,14,26,0.7); margin:0;">Cuando dijimos, donde dijimos.</p>
+      </div>
+      <div style="padding:40px 28px; border-right:1px solid rgba(10,14,26,0.15); display:flex; flex-direction:column; gap:18px;">
+        <p style="font-family:'Fraunces', serif; font-style:italic; font-weight:300; font-size:36px; color:#C78122; margin:0; line-height:1;">ii</p>
+        <h4 style="font-family:'Geist', sans-serif; font-weight:700; font-size:38px; letter-spacing:-0.04em; margin:0; color:#0A0E1A;">Cumplimos<span style="color:#C78122;">.</span></h4>
+        <p style="font-family:'Geist', sans-serif; font-size:16px; line-height:1.5; color:rgba(10,14,26,0.7); margin:0;">Plazo, presupuesto y alcance no se mueven sin avisar.</p>
+      </div>
+      <div style="padding:40px 28px; border-right:1px solid rgba(10,14,26,0.15); display:flex; flex-direction:column; gap:18px;">
+        <p style="font-family:'Fraunces', serif; font-style:italic; font-weight:300; font-size:36px; color:#C78122; margin:0; line-height:1;">iii</p>
+        <h4 style="font-family:'Geist', sans-serif; font-weight:700; font-size:38px; letter-spacing:-0.04em; margin:0; color:#0A0E1A;">Cuidamos<span style="color:#C78122;">.</span></h4>
+        <p style="font-family:'Geist', sans-serif; font-size:16px; line-height:1.5; color:rgba(10,14,26,0.7); margin:0;">Cada metro, como si fuera nuestro.</p>
+      </div>
+      <div style="padding:40px 28px; border-right:1px solid rgba(10,14,26,0.15); display:flex; flex-direction:column; gap:18px;">
+        <p style="font-family:'Fraunces', serif; font-style:italic; font-weight:300; font-size:36px; color:#C78122; margin:0; line-height:1;">iv</p>
+        <h4 style="font-family:'Geist', sans-serif; font-weight:700; font-size:38px; letter-spacing:-0.04em; margin:0; color:#0A0E1A;">Medimos<span style="color:#C78122;">.</span></h4>
+        <p style="font-family:'Geist', sans-serif; font-size:16px; line-height:1.5; color:rgba(10,14,26,0.7); margin:0;">Datos, expedientes, fotos, tiempos. Sin opacidad.</p>
+      </div>
+      <div style="padding:40px 0 0 28px; display:flex; flex-direction:column; gap:18px;">
+        <p style="font-family:'Fraunces', serif; font-style:italic; font-weight:300; font-size:36px; color:#C78122; margin:0; line-height:1;">v</p>
+        <h4 style="font-family:'Geist', sans-serif; font-weight:700; font-size:38px; letter-spacing:-0.04em; margin:0; color:#0A0E1A;">Hablamos<span style="color:#C78122;">.</span></h4>
+        <p style="font-family:'Geist', sans-serif; font-size:16px; line-height:1.5; color:rgba(10,14,26,0.7); margin:0;">Sin jerga, sin letra pequeña.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════ 08 · CIERRE ═════════ -->
+  <section data-label="Cierre" style="position:relative; width:100%; height:100%; background:#0A0E1A; color:#EFEDE6; padding:140px; display:flex; flex-direction:column; justify-content:space-between; overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; right:-260px; bottom:-200px; width:900px; height:900px; background:radial-gradient(circle, rgba(240,183,62,0.10), transparent 60%); pointer-events:none;"></div>
+
+    <p style="font-family:'Geist Mono', monospace; font-size:14px; letter-spacing:0.24em; text-transform:uppercase; color:#F0B73E; margin:0; display:flex; align-items:center; gap:14px; position:relative; z-index:1;"><span style="display:inline-block; width:32px; height:1px; background:#F0B73E;"></span>Gracias</p>
+
+    <div style="position:relative; z-index:1;">
+      <span style="font-family:'Geist', sans-serif; font-weight:700; letter-spacing:-0.06em; line-height:0.86; font-size:120px; color:#EFEDE6; display:inline-flex; align-items:flex-end; gap:6px; margin-bottom:40px;">Nikko<span style="font-family:'Fraunces', serif; font-style:italic; font-weight:300; font-size:0.55em; color:#F0B73E; letter-spacing:-0.04em; margin-bottom:0.06em; line-height:1;">Eco.</span></span>
+
+      <p style="font-family:'Fraunces', serif; font-weight:300; font-size:64px; line-height:1; letter-spacing:-0.035em; margin:0; color:#EFEDE6;">Tus metas, <span style="font-style:italic; color:#F0B73E;">nuestro oficio.</span></p>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; padding-top:36px; border-top:1px solid rgba(239,237,230,0.18); position:relative; z-index:1;">
+      <p style="font-family:'Geist', sans-serif; font-size:18px; color:rgba(239,237,230,0.7); margin:0; line-height:1.5;">info@nikkoeco.com</p>
+      <p style="font-family:'Geist Mono', monospace; font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(239,237,230,0.45); margin:0; text-align:right; line-height:1.7;">Confidencial<br/>nikkoeco.es</p>
+    </div>
+  </section>
+
+</x-import>
+
+</x-dc>
+</body>
+</html>

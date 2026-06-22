@@ -1,0 +1,19 @@
+/* ============================================================
+   Motion — Nikko Eco
+   Animaciones discretas. Easing serio, sin rebotes.
+   ============================================================ */
+
+:root {
+  /* Duración */
+  --dur-instant:  80ms;  /* @kind other */
+  --dur-fast:     160ms; /* @kind other */
+  --dur-base:     240ms; /* @kind other */
+  --dur-slow:     420ms; /* @kind other */
+  --dur-deliberate: 680ms; /* @kind other */
+
+  /* Easings */
+  --ease-out:     cubic-bezier(0.2, 0.7, 0.2, 1);    /* @kind other */
+  --ease-in:      cubic-bezier(0.6, 0, 0.8, 0.3);    /* @kind other */
+  --ease-in-out:  cubic-bezier(0.65, 0, 0.35, 1);    /* @kind other */
+  --ease-soft:    cubic-bezier(0.4, 0, 0.2, 1);      /* @kind other */
+}
