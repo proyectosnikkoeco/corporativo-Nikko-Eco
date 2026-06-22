@@ -46,7 +46,7 @@ export async function submitContact(
     return {
       status: "error",
       message:
-        "No hemos podido enviar tu mensaje. Inténtalo de nuevo o llámanos directamente.",
+        "No hemos podido enviar tu mensaje. Inténtalo de nuevo o escríbenos a info@nikkoeco.com.",
     };
   }
 

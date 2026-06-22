@@ -23,7 +23,7 @@ export function ContactForm() {
           {state.message}
         </p>
         <p className="mt-4 text-[14px] leading-[1.6] text-ink-800/70">
-          Mientras tanto, si es urgente puedes llamarnos directamente.
+          Si es urgente, escríbenos directamente a info@nikkoeco.com.
         </p>
       </div>
     );
