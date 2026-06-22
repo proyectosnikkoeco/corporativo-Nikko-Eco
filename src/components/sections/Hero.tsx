@@ -1,5 +1,6 @@
 import { LinkButton } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { Isotype } from "@/components/brand/Isotype";
 import { brand } from "@/lib/brand";
 
 export function Hero() {
@@ -14,6 +15,14 @@ export function Hero() {
             "radial-gradient(circle, rgba(240,183,62,0.16), transparent 60%)",
         }}
       />
+
+      {/* Isotipo de marca, grande, integrado con el halo */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-4 top-10 hidden opacity-90 md:block lg:right-12"
+      >
+        <Isotype size={300} tone="light" />
+      </div>
 
       <div className="relative mx-auto max-w-6xl px-6 pb-28 pt-28 md:pb-36 md:pt-36">
         <Eyebrow tone="accent">Grupo de servicio inmobiliario</Eyebrow>

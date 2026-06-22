@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Wordmark } from "@/components/brand/Wordmark";
-import { Isotype } from "@/components/brand/Isotype";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { brand, subBrands } from "@/lib/brand";
 
@@ -11,10 +10,7 @@ export function Footer() {
     <footer className="bg-ink-800 text-bone-300">
       <div className="mx-auto grid max-w-6xl gap-14 px-6 py-20 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <div className="flex items-center gap-3">
-            <Isotype size={44} tone="light" />
-            <Wordmark size="lg" tone="light" />
-          </div>
+          <Wordmark size="lg" tone="light" />
           <p className="mt-6 max-w-xs font-serif italic font-light text-[18px] leading-snug text-bone-300/70">
             {brand.claim}
           </p>

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Wordmark } from "@/components/brand/Wordmark";
-import { Isotype } from "@/components/brand/Isotype";
 import { LinkButton } from "@/components/ui/Button";
 import { brand } from "@/lib/brand";
 
@@ -17,9 +16,8 @@ export function Header() {
         <Link
           href="/"
           aria-label={`${brand.name} — Inicio`}
-          className="flex items-center gap-2.5"
+          className="flex items-center"
         >
-          <Isotype size={36} tone="dark" />
           <Wordmark size="md" tone="dark" />
         </Link>
 
