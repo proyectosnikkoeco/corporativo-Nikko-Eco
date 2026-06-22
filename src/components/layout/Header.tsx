@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Wordmark } from "@/components/brand/Wordmark";
+import { Isotype } from "@/components/brand/Isotype";
 import { LinkButton } from "@/components/ui/Button";
 import { brand } from "@/lib/brand";
 
@@ -33,9 +34,12 @@ export function Header() {
           ))}
         </nav>
 
-        <LinkButton href="/contacto" variant="primary" size="sm" className="hidden md:inline-flex">
-          Pide presupuesto
-        </LinkButton>
+        <div className="flex items-center gap-4">
+          <LinkButton href="/contacto" variant="primary" size="sm" className="hidden md:inline-flex">
+            Pide presupuesto
+          </LinkButton>
+          <Isotype size={32} tone="dark" />
+        </div>
       </div>
     </header>
   );

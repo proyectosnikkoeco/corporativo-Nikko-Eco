@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { LinkButton } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { Isotype } from "@/components/brand/Isotype";
 import { brand } from "@/lib/brand";
 
 export function Hero() {
@@ -36,11 +35,7 @@ export function Hero() {
       />
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 pb-28 pt-28 md:pb-36 md:pt-36">
-        <Isotype size={72} tone="light" />
-
-        <div className="mt-8">
-          <Eyebrow tone="accent">Grupo de servicio inmobiliario</Eyebrow>
-        </div>
+        <Eyebrow tone="accent">Grupo de servicio inmobiliario</Eyebrow>
 
         <h1
           className="mt-6 font-sans font-bold text-bone-300"
