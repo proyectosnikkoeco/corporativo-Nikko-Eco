@@ -42,10 +42,6 @@ export default function ContactoPage() {
                   </a>
                 </dd>
               </div>
-              <div>
-                <dt className={labelClass}>Teléfono</dt>
-                <dd className="mt-1 text-[15px] text-ink-900">{brand.contact.phone}</dd>
-              </div>
             </dl>
           </div>
 

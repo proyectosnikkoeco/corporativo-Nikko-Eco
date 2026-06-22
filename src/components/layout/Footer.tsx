@@ -61,7 +61,6 @@ export function Footer() {
                 {brand.contact.email}
               </a>
             </li>
-            <li>{brand.contact.phone}</li>
             <li>{brand.contact.address}</li>
           </ul>
         </div>
