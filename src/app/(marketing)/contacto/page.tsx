@@ -35,26 +35,10 @@ export default function ContactoPage() {
 
             <dl className="mt-12 space-y-6">
               <div>
-                <dt className={labelClass}>Información general</dt>
+                <dt className={labelClass}>Email</dt>
                 <dd className="mt-1 text-[15px]">
                   <a href={`mailto:${brand.contact.email}`} className="text-amber-600 hover:underline">
                     {brand.contact.email}
-                  </a>
-                </dd>
-              </div>
-              <div>
-                <dt className={labelClass}>Ventas / presupuestos</dt>
-                <dd className="mt-1 text-[15px]">
-                  <a href={`mailto:${brand.contact.sales}`} className="text-amber-600 hover:underline">
-                    {brand.contact.sales}
-                  </a>
-                </dd>
-              </div>
-              <div>
-                <dt className={labelClass}>Proyectos</dt>
-                <dd className="mt-1 text-[15px]">
-                  <a href={`mailto:${brand.contact.projects}`} className="text-amber-600 hover:underline">
-                    {brand.contact.projects}
                   </a>
                 </dd>
               </div>

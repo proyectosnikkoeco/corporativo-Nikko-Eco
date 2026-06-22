@@ -16,9 +16,6 @@ export const brand = {
   url: "https://nikkoeco.com",
   contact: {
     email: "info@nikkoeco.com",
-    sales: "ventas@nikkoeco.com",
-    projects: "proyectos@nikkoeco.com",
-    admin: "admin@nikkoeco.com",
     phone: "+34 000 000 000",
     address: "España",
   },
