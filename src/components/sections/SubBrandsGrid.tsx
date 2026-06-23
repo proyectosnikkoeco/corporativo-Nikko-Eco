@@ -18,7 +18,7 @@ export function SubBrandsGrid() {
           </h2>
           <p className="mt-5 max-w-2xl text-[17px] leading-[1.55] text-ink-800/85">
             Cuidamos del lugar donde se vive, donde se trabaja y donde se invierte. Cada
-            sub-marca de Nikko es un equipo especializado con la misma exigencia: plazo,
+            sub‑marca de Nikko es un equipo especializado con la misma exigencia: plazo,
             presupuesto y alcance comprometidos.
           </p>
         </div>
