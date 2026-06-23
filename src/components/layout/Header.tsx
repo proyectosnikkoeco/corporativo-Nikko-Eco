@@ -39,7 +39,7 @@ export function Header() {
         <div className="flex items-center gap-5">
           <a
             href={`mailto:${brand.contact.email}`}
-            className="hidden font-mono text-[12px] tracking-[-0.005em] text-ink-800 transition-colors hover:text-amber-600 lg:inline"
+            className="hidden text-sm font-medium tracking-[-0.01em] text-ink-800 transition-colors hover:text-amber-600 lg:inline"
           >
             {brand.contact.email}
           </a>
