@@ -35,6 +35,8 @@ export const subBrands = [
     audience: "B2B compañías aseguradoras",
     summary:
       "Peritaciones, gestión de siniestros y reparaciones para compañías de seguros. Plazos cortos, expedientes cerrados.",
+    image: "/images/seguros.jpg",
+    imageAlt: "Salón de vivienda restaurada tras siniestro, luz natural",
   },
   {
     slug: "hogar",
@@ -42,6 +44,8 @@ export const subBrands = [
     audience: "Particulares y comunidades",
     summary:
       "Mantenimiento integral, reparaciones urgentes y cuidado del hogar. Técnicos propios, presupuesto cerrado.",
+    image: "/images/hogar.jpg",
+    imageAlt: "Salón y cocina abierta en vivienda al atardecer",
   },
   {
     slug: "obras",
@@ -49,6 +53,8 @@ export const subBrands = [
     audience: "Reformas integrales y subcontrata",
     summary:
       "Reformas integrales, rehabilitación y subcontrata. Plazo, presupuesto y alcance comprometidos.",
+    image: "/images/obras.jpg",
+    imageAlt: "Cocina reformada con isla y salida al exterior",
   },
   {
     slug: "capital",
@@ -56,6 +62,8 @@ export const subBrands = [
     audience: "Inversión inmobiliaria",
     summary:
       "Búsqueda, gestión y valorización de activos inmobiliarios. Acompañamiento end-to-end al inversor.",
+    image: "/images/capital.jpg",
+    imageAlt: "Promoción residencial con vistas al mar al atardecer",
   },
 ] as const;
 

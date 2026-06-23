@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SubMark } from "@/components/brand/SubMark";
 import { LinkButton } from "@/components/ui/Button";
@@ -38,23 +39,34 @@ export default function ServiciosPage() {
               <li
                 key={s.slug}
                 id={s.slug}
-                className="scroll-mt-24 bg-bone-200 p-10 md:p-12"
+                className="scroll-mt-24 flex flex-col bg-bone-200"
               >
-                <SubMark brand={s.name as "Seguros" | "Hogar" | "Obras" | "Capital"} size="lg" tone="dark" />
-                <p className="mt-3 font-mono text-[10.5px] uppercase tracking-[0.22em] text-ink-400">
-                  {s.audience}
-                </p>
-                <p className="mt-6 text-[17px] leading-[1.6] text-ink-800/85">
-                  {s.summary}
-                </p>
-                <div className="mt-8">
-                  <LinkButton
-                    href="/contacto"
-                    variant="outline"
-                    size="md"
-                  >
-                    Pedir presupuesto
-                  </LinkButton>
+                <div className="relative aspect-[16/10] overflow-hidden bg-ink-800">
+                  <Image
+                    src={s.image}
+                    alt={s.imageAlt}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-10 md:p-12">
+                  <SubMark brand={s.name as "Seguros" | "Hogar" | "Obras" | "Capital"} size="lg" tone="dark" />
+                  <p className="mt-3 font-mono text-[10.5px] uppercase tracking-[0.22em] text-ink-400">
+                    {s.audience}
+                  </p>
+                  <p className="mt-6 text-[17px] leading-[1.6] text-ink-800/85">
+                    {s.summary}
+                  </p>
+                  <div className="mt-8">
+                    <LinkButton
+                      href="/contacto"
+                      variant="outline"
+                      size="md"
+                    >
+                      Pedir presupuesto
+                    </LinkButton>
+                  </div>
                 </div>
               </li>
             ))}
