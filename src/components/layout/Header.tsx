@@ -12,12 +12,7 @@ const nav = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border-soft bg-bone-300/90 backdrop-blur relative">
-      {/* Isotipo fijado al borde derecho de la pantalla */}
-      <div className="pointer-events-none absolute right-5 top-1/2 hidden -translate-y-1/2 lg:block">
-        <Isotype size={40} tone="dark" />
-      </div>
-
+    <header className="sticky top-0 z-40 w-full border-b border-border-soft bg-bone-300/90 backdrop-blur">
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
         <Link
           href="/"
@@ -39,9 +34,12 @@ export function Header() {
           ))}
         </nav>
 
-        <LinkButton href="/contacto" variant="primary" size="sm" className="hidden md:inline-flex">
-          Pide presupuesto
-        </LinkButton>
+        <div className="flex items-center gap-4">
+          <LinkButton href="/contacto" variant="primary" size="sm" className="hidden md:inline-flex">
+            Pide presupuesto
+          </LinkButton>
+          <Isotype size={36} tone="dark" />
+        </div>
       </div>
     </header>
   );
