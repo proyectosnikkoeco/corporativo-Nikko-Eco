@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Wordmark } from "@/components/brand/Wordmark";
 import { Isotype } from "@/components/brand/Isotype";
 import { LinkButton } from "@/components/ui/Button";
+import { MobileMenu } from "@/components/layout/MobileMenu";
 import { brand } from "@/lib/brand";
 
 const nav = [
@@ -55,6 +56,7 @@ export function Header() {
             Pide presupuesto
           </LinkButton>
           <Isotype size={36} tone="dark" />
+          <MobileMenu />
         </div>
       </div>
     </header>

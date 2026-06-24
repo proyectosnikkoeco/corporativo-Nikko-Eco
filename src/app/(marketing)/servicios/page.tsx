@@ -39,7 +39,7 @@ export default function ServiciosPage() {
               <li
                 key={s.slug}
                 id={s.slug}
-                className="scroll-mt-24 flex flex-col bg-bone-200"
+                className="scroll-mt-36 flex flex-col bg-bone-200"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-ink-800">
                   <Image

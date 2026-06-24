@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { LinkButton } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { brand } from "@/lib/brand";
 
 export function Hero() {
   return (
@@ -51,7 +50,7 @@ export function Hero() {
         </h1>
 
         <p className="mt-7 max-w-xl font-serif italic font-light text-[22px] leading-[1.3] tracking-[-0.015em] text-bone-300/85">
-          {brand.description}
+          Cuidamos del lugar donde se vive, donde se trabaja y donde se invierte.
         </p>
 
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
