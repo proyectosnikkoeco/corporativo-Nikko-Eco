@@ -36,7 +36,8 @@ export const subBrands = [
     summary:
       "Peritaciones, gestión de siniestros y reparaciones para compañías de seguros. Plazos cortos, expedientes cerrados.",
     image: "/images/seguros.jpg",
-    imageAlt: "Salón de vivienda restaurada tras siniestro, luz natural",
+    imageAlt:
+      "Interior reparado tras siniestro — entrega lista para asegurado, expediente cerrado",
   },
   {
     slug: "hogar",
@@ -45,7 +46,8 @@ export const subBrands = [
     summary:
       "Mantenimiento integral, reparaciones urgentes y cuidado del hogar. Técnicos propios, presupuesto cerrado.",
     image: "/images/hogar.jpg",
-    imageAlt: "Salón y cocina abierta en vivienda al atardecer",
+    imageAlt:
+      "Vivienda mantenida por Nikko Hogar — salón y cocina abiertas, hogar cuidado",
   },
   {
     slug: "obras",
@@ -54,7 +56,8 @@ export const subBrands = [
     summary:
       "Reformas integrales, rehabilitación y subcontrata. Plazo, presupuesto y alcance comprometidos.",
     image: "/images/obras.jpg",
-    imageAlt: "Cocina reformada con isla y salida al exterior",
+    imageAlt:
+      "Reforma integral terminada por Nikko Obras — cocina con isla y salida al exterior",
   },
   {
     slug: "capital",
@@ -63,7 +66,8 @@ export const subBrands = [
     summary:
       "Búsqueda, gestión y valorización de activos inmobiliarios. Acompañamiento end-to-end al inversor.",
     image: "/images/capital.jpg",
-    imageAlt: "Promoción residencial con vistas al mar al atardecer",
+    imageAlt:
+      "Activo inmobiliario gestionado por Nikko Capital — promoción residencial de inversión",
   },
 ] as const;
 

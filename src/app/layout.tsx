@@ -44,12 +44,31 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: brand.name,
+    alternateName: brand.shortName,
+    url: brand.url,
+    description: brand.description,
+    email: brand.contact.email,
+    slogan: brand.claim,
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "ES",
+    },
+  };
+
   return (
     <html
       lang="es"
       className={`${geist.variable} ${geistMono.variable} ${fraunces.variable} h-full`}
     >
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -16,7 +16,7 @@ export function Header() {
       <div className="hidden bg-ink-900 text-bone-300/80 md:block">
         <div className="mx-auto flex h-9 max-w-6xl items-center justify-between px-6">
           <p className="font-mono text-[10.5px] uppercase tracking-[0.22em]">
-            Grupo de servicio inmobiliario
+            Seguros · Hogar · Obras · Capital
           </p>
           <a
             href={`mailto:${brand.contact.email}`}

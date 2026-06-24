@@ -21,7 +21,7 @@ export function Principles() {
           </p>
         </div>
 
-        <ol className="mt-16 grid gap-px overflow-hidden border border-border-inverse bg-border-inverse md:grid-cols-5">
+        <ol className="mt-16 grid gap-px overflow-hidden border border-border-inverse bg-border-inverse sm:grid-cols-2 lg:grid-cols-5">
           {principles.map((p, i) => (
             <li key={p.title} className="bg-ink-800 p-7">
               <p className="font-serif italic font-light text-[22px] leading-none text-amber-400">

@@ -18,12 +18,12 @@ export function ContactForm() {
   if (state.status === "success") {
     return (
       <div className="flex h-full flex-col justify-center border-l-2 border-amber-400 bg-bone-200 p-8 md:p-10">
-        <p className={labelClass}>Solicitud recibida</p>
+        <p className={labelClass}>Recibido — te llamamos hoy</p>
         <p className="mt-4 font-serif italic font-light text-[26px] leading-[1.3] tracking-[-0.015em] text-ink-900">
           {state.message}
         </p>
         <p className="mt-4 text-[14px] leading-[1.6] text-ink-800/70">
-          Si es urgente, escríbenos directamente a info@nikkoeco.com.
+          Si surge algo antes, escríbenos a info@nikkoeco.com.
         </p>
       </div>
     );
