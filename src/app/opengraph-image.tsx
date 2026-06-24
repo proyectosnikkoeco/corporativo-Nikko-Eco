@@ -22,6 +22,7 @@ export default function OpengraphImage() {
           justifyContent: "space-between",
           background: INK,
           padding: "80px",
+          position: "relative",
           fontFamily: "sans-serif",
         }}
       >
@@ -80,6 +81,32 @@ export default function OpengraphImage() {
           }}
         >
           Grupo de servicio inmobiliario integral
+        </div>
+
+        {/* Isotipo — stamp esquina inferior derecha */}
+        <div
+          style={{
+            position: "absolute",
+            right: 80,
+            bottom: 76,
+            display: "flex",
+            alignItems: "flex-end",
+            color: BONE,
+          }}
+        >
+          <span style={{ fontSize: 80, fontWeight: 900, letterSpacing: "-5px", lineHeight: 1 }}>
+            N
+          </span>
+          <div
+            style={{
+              width: 14,
+              height: 14,
+              borderRadius: 999,
+              background: AMBER,
+              marginLeft: 2,
+              marginBottom: 12,
+            }}
+          />
         </div>
       </div>
     ),
