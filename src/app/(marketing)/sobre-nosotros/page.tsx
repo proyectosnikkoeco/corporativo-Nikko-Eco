@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SubMark } from "@/components/brand/SubMark";
 import { Principles } from "@/components/sections/Principles";
-import { CTA } from "@/components/sections/CTA";
 import { subBrands } from "@/lib/brand";
 
 export const metadata: Metadata = {
@@ -74,7 +73,6 @@ export default function SobreNosotrosPage() {
       </section>
 
       <Principles />
-      <CTA />
     </>
   );
 }

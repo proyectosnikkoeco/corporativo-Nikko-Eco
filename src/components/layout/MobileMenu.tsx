@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { LinkButton } from "@/components/ui/Button";
 import { Wordmark } from "@/components/brand/Wordmark";
+import { NavLink } from "@/components/layout/NavLink";
 import { brand } from "@/lib/brand";
 
 const nav = [
@@ -58,14 +59,18 @@ export function MobileMenu() {
             <ul className="space-y-7">
               {nav.map((item) => (
                 <li key={item.href}>
-                  <Link
+                  <NavLink
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className="font-sans font-bold text-ink-900"
-                    style={{ fontSize: "clamp(36px, 9vw, 56px)", letterSpacing: "-0.04em", lineHeight: 1 }}
+                    className="font-sans font-bold text-ink-900 transition-colors hover:text-amber-600"
+                    activeClassName="!text-amber-600"
                   >
-                    {item.label}
-                  </Link>
+                    <span
+                      style={{ fontSize: "clamp(36px, 9vw, 56px)", letterSpacing: "-0.04em", lineHeight: 1 }}
+                    >
+                      {item.label}
+                    </span>
+                  </NavLink>
                 </li>
               ))}
             </ul>

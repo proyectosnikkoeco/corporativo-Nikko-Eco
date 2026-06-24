@@ -74,7 +74,13 @@ export default function ServiciosPage() {
         </div>
       </section>
 
-      <CTA />
+      <CTA
+        eyebrow="Empieza aquí"
+        titleLead="Dinos qué especialidad necesitas."
+        titleAccent="Coordinamos por ti."
+        body="Una sola persona te atiende. Internamente coordinamos el equipo técnico que toca según el caso. Sin pelotear entre oficinas."
+        ctaLabel="Pedir presupuesto"
+      />
     </>
   );
 }
