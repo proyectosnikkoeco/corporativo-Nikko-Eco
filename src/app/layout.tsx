@@ -31,6 +31,9 @@ export const metadata: Metadata = {
   },
   description: brand.description,
   metadataBase: new URL(brand.url),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: brand.name,
     description: brand.description,
@@ -69,8 +72,13 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
         />
+        <a href="#main" className="skip-to-content">
+          Saltar al contenido
+        </a>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main" className="flex-1">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

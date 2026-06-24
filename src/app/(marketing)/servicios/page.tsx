@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Servicios",
   description:
     "Las cuatro especialidades de Nikko Eco: Seguros, Hogar, Obras y Capital. Una sola interlocución, expediente único.",
+  alternates: { canonical: "/servicios" },
 };
 
 export default function ServiciosPage() {

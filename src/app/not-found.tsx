@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Wordmark } from "@/components/brand/Wordmark";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { LinkButton } from "@/components/ui/Button";
+import { subBrands } from "@/lib/brand";
 
 export default function NotFound() {
   return (
@@ -22,7 +23,7 @@ export default function NotFound() {
         <p className="mx-auto mt-5 max-w-md text-[17px] leading-[1.6] text-bone-300/70">
           La dirección que buscas no está aquí. Vuelve al inicio o cuéntanos qué necesitas.
         </p>
-        <div className="mt-9 flex justify-center gap-3">
+        <div className="mt-9 flex flex-wrap justify-center gap-3">
           <LinkButton href="/" variant="primary" size="lg">
             Volver al inicio
           </LinkButton>
@@ -35,11 +36,29 @@ export default function NotFound() {
             Contacto
           </LinkButton>
         </div>
-        <p className="mt-12 text-[13px] text-bone-300/40">
-          <Link href="/servicios" className="hover:text-amber-400">
-            Ver servicios
-          </Link>
-        </p>
+
+        <div className="mt-16 border-t border-border-inverse pt-10">
+          <p className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-bone-300/45">
+            Quizás buscabas
+          </p>
+          <ul className="mt-5 flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm">
+            {subBrands.map((s) => (
+              <li key={s.slug}>
+                <Link
+                  href={`/servicios#${s.slug}`}
+                  className="text-bone-300/85 hover:text-amber-400"
+                >
+                  Nikko {s.name}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link href="/sobre-nosotros" className="text-bone-300/85 hover:text-amber-400">
+                Sobre nosotros
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   );

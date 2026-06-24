@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Sobre nosotros",
   description:
     "Nikko Eco — grupo de servicio inmobiliario integral. Cuidamos del lugar donde se vive, donde se trabaja y donde se invierte.",
+  alternates: { canonical: "/sobre-nosotros" },
 };
 
 export default function SobreNosotrosPage() {
@@ -63,7 +64,7 @@ export default function SobreNosotrosPage() {
                   <SubMark brand={s.name as "Seguros" | "Hogar" | "Obras" | "Capital"} size="sm" tone="dark" />
                   <p className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-ink-400 transition-colors group-hover:text-amber-600">
                     {s.audience}
-                    <span className="ml-1 inline-block transition-transform duration-[160ms] ease-out group-hover:translate-x-1">→</span>
+                    <span aria-hidden className="ml-1 inline-block transition-transform duration-[160ms] ease-out group-hover:translate-x-1">→</span>
                   </p>
                 </Link>
               </li>

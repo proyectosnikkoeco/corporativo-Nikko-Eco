@@ -6,6 +6,7 @@ import { legalEntity } from "@/lib/legal";
 export const metadata: Metadata = {
   title: "Política de cookies",
   description: "Información sobre el uso de cookies en el sitio web de Nikko Eco.",
+  alternates: { canonical: "/cookies" },
 };
 
 export default function CookiesPage() {

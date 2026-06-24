@@ -6,6 +6,7 @@ import { legalEntity } from "@/lib/legal";
 export const metadata: Metadata = {
   title: "Política de privacidad",
   description: "Cómo trata Nikko Eco tus datos personales conforme al RGPD y la LOPDGDD.",
+  alternates: { canonical: "/privacidad" },
 };
 
 export default function PrivacidadPage() {

@@ -10,7 +10,7 @@ const initial: ContactState = { status: "idle" };
 const labelClass =
   "font-mono text-[10.5px] uppercase tracking-[0.22em] font-semibold text-ink-400";
 const inputClass =
-  "mt-2 block w-full rounded-xs border border-ink-200 bg-bone-100 px-4 py-3 text-[14px] text-ink-900 outline-none transition-colors focus:border-amber-500";
+  "mt-2 block w-full rounded-xs border border-ink-200 bg-bone-100 px-4 py-3 text-[14px] text-ink-900 outline-none transition-colors hover:border-ink-400 focus:border-amber-500 focus:ring-0";
 
 export function ContactForm() {
   const [state, formAction, pending] = useActionState(submitContact, initial);

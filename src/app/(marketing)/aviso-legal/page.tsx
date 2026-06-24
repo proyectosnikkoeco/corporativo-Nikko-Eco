@@ -6,6 +6,7 @@ import { legalEntity } from "@/lib/legal";
 export const metadata: Metadata = {
   title: "Aviso legal",
   description: "Información legal de Nikko Eco conforme a la LSSI-CE.",
+  alternates: { canonical: "/aviso-legal" },
 };
 
 export default function AvisoLegalPage() {

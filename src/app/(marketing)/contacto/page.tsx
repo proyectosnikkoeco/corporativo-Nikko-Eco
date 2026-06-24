@@ -6,6 +6,7 @@ import { brand } from "@/lib/brand";
 export const metadata: Metadata = {
   title: "Contacto",
   description: `Contacta con ${brand.name} para pedir presupuesto o más información.`,
+  alternates: { canonical: "/contacto" },
 };
 
 const labelClass =

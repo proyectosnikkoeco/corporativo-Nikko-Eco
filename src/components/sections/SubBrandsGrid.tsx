@@ -48,7 +48,7 @@ export function SubBrandsGrid() {
                   </div>
                   <p className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-ink-400 transition-colors group-hover:text-amber-600">
                     {s.audience}
-                    <span className="ml-1 inline-block transition-transform duration-[160ms] ease-out group-hover:translate-x-1">→</span>
+                    <span aria-hidden className="ml-1 inline-block transition-transform duration-[160ms] ease-out group-hover:translate-x-1">→</span>
                   </p>
                 </div>
               </Link>
