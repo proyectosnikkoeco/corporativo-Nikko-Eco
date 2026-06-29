@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { brand } from "@/lib/brand";
+import { brand, subBrands } from "@/lib/brand";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = brand.url;
@@ -8,6 +8,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     { path: "", priority: 1, changeFrequency: "monthly" as const },
     { path: "/servicios", priority: 0.9, changeFrequency: "monthly" as const },
+    ...subBrands.map((s) => ({
+      path: `/servicios/${s.slug}`,
+      priority: 0.85,
+      changeFrequency: "monthly" as const,
+    })),
     { path: "/sobre-nosotros", priority: 0.7, changeFrequency: "yearly" as const },
     { path: "/contacto", priority: 0.8, changeFrequency: "yearly" as const },
     { path: "/aviso-legal", priority: 0.2, changeFrequency: "yearly" as const },

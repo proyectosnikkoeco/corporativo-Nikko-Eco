@@ -58,7 +58,7 @@ export default function SobreNosotrosPage() {
             {subBrands.map((s) => (
               <li key={s.slug} className="bg-bone-200 p-7">
                 <Link
-                  href={`/servicios#${s.slug}`}
+                  href={`/servicios/${s.slug}`}
                   className="group flex h-full flex-col justify-between gap-5"
                 >
                   <SubMark brand={s.name as "Seguros" | "Hogar" | "Obras" | "Capital"} size="sm" tone="dark" />

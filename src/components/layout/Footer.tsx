@@ -1,6 +1,7 @@
-import Link from "next/link";
-import { Wordmark } from "@/components/brand/Wordmark";
+import { Isotype } from "@/components/brand/Isotype";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { NavLink } from "@/components/layout/NavLink";
+import Link from "next/link";
 import { brand, subBrands } from "@/lib/brand";
 
 export function Footer() {
@@ -10,7 +11,9 @@ export function Footer() {
     <footer className="bg-ink-800 text-bone-300">
       <div className="mx-auto grid max-w-6xl gap-14 px-6 py-20 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <Wordmark size="lg" tone="light" />
+          <div className="-ml-1">
+            <Isotype size={72} tone="light" />
+          </div>
           <p className="mt-6 max-w-xs font-serif italic font-light text-[18px] leading-snug text-bone-300/70">
             {brand.claim}
           </p>
@@ -22,7 +25,7 @@ export function Footer() {
             {subBrands.map((s) => (
               <li key={s.slug}>
                 <Link
-                  href={`/servicios#${s.slug}`}
+                  href={`/servicios/${s.slug}`}
                   className="text-bone-300/85 hover:text-amber-400 transition-colors"
                 >
                   Nikko {s.name}
@@ -36,19 +39,31 @@ export function Footer() {
           <Eyebrow tone="inverse">Navegación</Eyebrow>
           <ul className="mt-4 space-y-2 text-sm">
             <li>
-              <Link href="/servicios" className="text-bone-300/85 hover:text-amber-400">
+              <NavLink
+                href="/servicios"
+                className="text-bone-300/85 transition-colors hover:text-amber-400"
+                activeClassName="!text-amber-400"
+              >
                 Servicios
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link href="/sobre-nosotros" className="text-bone-300/85 hover:text-amber-400">
+              <NavLink
+                href="/sobre-nosotros"
+                className="text-bone-300/85 transition-colors hover:text-amber-400"
+                activeClassName="!text-amber-400"
+              >
                 Sobre nosotros
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link href="/contacto" className="text-bone-300/85 hover:text-amber-400">
+              <NavLink
+                href="/contacto"
+                className="text-bone-300/85 transition-colors hover:text-amber-400"
+                activeClassName="!text-amber-400"
+              >
                 Contacto
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>

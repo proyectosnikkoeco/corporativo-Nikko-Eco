@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import { ViewTransition } from "react";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SubMark } from "@/components/brand/SubMark";
-import { LinkButton } from "@/components/ui/Button";
 import { CTA } from "@/components/sections/CTA";
 import { subBrands } from "@/lib/brand";
 
@@ -42,33 +43,35 @@ export default function ServiciosPage() {
                 id={s.slug}
                 className="scroll-mt-36 flex flex-col bg-bone-200"
               >
-                <div className="relative aspect-[16/10] overflow-hidden bg-ink-800">
-                  <Image
-                    src={s.image}
-                    alt={s.imageAlt}
-                    fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-10 md:p-12">
-                  <SubMark brand={s.name as "Seguros" | "Hogar" | "Obras" | "Capital"} size="lg" tone="dark" />
-                  <p className="mt-3 font-mono text-[10.5px] uppercase tracking-[0.22em] text-ink-400">
-                    {s.audience}
-                  </p>
-                  <p className="mt-6 text-[17px] leading-[1.6] text-ink-800/85">
-                    {s.summary}
-                  </p>
-                  <div className="mt-8">
-                    <LinkButton
-                      href="/contacto"
-                      variant="outline"
-                      size="md"
-                    >
-                      Pedir presupuesto
-                    </LinkButton>
+                <Link
+                  href={`/servicios/${s.slug}`}
+                  className="group flex h-full flex-col"
+                >
+                  <ViewTransition name={`sub-${s.slug}`}>
+                    <div className="relative aspect-[16/10] overflow-hidden bg-ink-800">
+                      <Image
+                        src={s.image}
+                        alt={s.imageAlt}
+                        fill
+                        sizes="(min-width: 768px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                      />
+                    </div>
+                  </ViewTransition>
+                  <div className="flex flex-1 flex-col p-10 md:p-12">
+                    <SubMark brand={s.name as "Seguros" | "Hogar" | "Obras" | "Capital"} size="lg" tone="dark" />
+                    <p className="mt-3 font-mono text-[10.5px] uppercase tracking-[0.22em] text-ink-400">
+                      {s.audience}
+                    </p>
+                    <p className="mt-6 text-[17px] leading-[1.6] text-ink-800/85">
+                      {s.summary}
+                    </p>
+                    <p className="mt-8 font-mono text-[10.5px] uppercase tracking-[0.22em] text-ink-700 transition-colors group-hover:text-amber-600">
+                      Ver Nikko {s.name}
+                      <span aria-hidden className="ml-1 inline-block transition-transform duration-[160ms] ease-out group-hover:translate-x-1">→</span>
+                    </p>
                   </div>
-                </div>
+                </Link>
               </li>
             ))}
           </ul>

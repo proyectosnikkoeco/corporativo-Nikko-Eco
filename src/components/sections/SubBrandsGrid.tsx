@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ViewTransition } from "react";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SubMark } from "@/components/brand/SubMark";
 import { subBrands } from "@/lib/brand";
@@ -24,21 +25,24 @@ export function SubBrandsGrid() {
         </div>
 
         <ul className="mt-14 grid grid-cols-1 gap-px overflow-hidden border border-border-soft bg-border-soft md:grid-cols-2">
-          {subBrands.map((s) => (
+          {subBrands.map((s, i) => (
             <li key={s.slug} className="bg-bone-200">
               <Link
-                href={`/servicios#${s.slug}`}
+                href={`/servicios/${s.slug}`}
                 className="group flex h-full flex-col"
               >
-                <div className="relative aspect-[16/10] overflow-hidden bg-ink-800">
-                  <Image
-                    src={s.image}
-                    alt={s.imageAlt}
-                    fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                  />
-                </div>
+                <ViewTransition name={`sub-${s.slug}`}>
+                  <div className="relative aspect-[16/10] overflow-hidden bg-ink-800">
+                    <Image
+                      src={s.image}
+                      alt={s.imageAlt}
+                      fill
+                      priority={i < 2}
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    />
+                  </div>
+                </ViewTransition>
                 <div className="flex flex-1 flex-col justify-between gap-6 p-8 md:p-10">
                   <div>
                     <SubMark brand={s.name as "Seguros" | "Hogar" | "Obras" | "Capital"} size="md" tone="dark" />

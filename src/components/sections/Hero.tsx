@@ -54,13 +54,14 @@ export function Hero() {
         </p>
 
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-          <LinkButton href="/contacto" variant="primary" size="lg">
+          <LinkButton href="/contacto" variant="primary" size="lg" prefetch>
             Pide presupuesto
           </LinkButton>
           <LinkButton
             href="/servicios"
             variant="ghost"
             size="lg"
+            prefetch
             className="!text-bone-300 !border-bone-300/30 hover:!bg-bone-300/10"
           >
             Ver servicios

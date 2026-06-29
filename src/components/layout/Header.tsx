@@ -20,7 +20,7 @@ export function Header() {
             {subBrands.map((s, i) => (
               <li key={s.slug} className="flex items-center gap-3">
                 <Link
-                  href={`/servicios#${s.slug}`}
+                  href={`/servicios/${s.slug}`}
                   className="font-mono text-[10.5px] uppercase tracking-[0.22em] transition-colors hover:text-amber-400"
                 >
                   {s.name}
@@ -67,7 +67,7 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-5">
-          <LinkButton href="/contacto" variant="primary" size="md" className="hidden md:inline-flex">
+          <LinkButton href="/contacto" variant="primary" size="md" prefetch className="hidden md:inline-flex">
             Pide presupuesto
           </LinkButton>
           <MobileMenu />
