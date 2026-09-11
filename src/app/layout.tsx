@@ -7,6 +7,7 @@ import { brand } from "@/lib/brand";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ThirdPartyScripts } from "@/components/analytics/ThirdParty";
+import { ConsentManager } from "@/components/consent/ConsentManager";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
@@ -71,6 +72,7 @@ export default function RootLayout({
         <Analytics />
         <SpeedInsights />
         <ThirdPartyScripts />
+        <ConsentManager />
       </body>
     </html>
   );

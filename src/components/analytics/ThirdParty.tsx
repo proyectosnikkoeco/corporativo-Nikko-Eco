@@ -1,24 +1,33 @@
+"use client";
+
 import Script from "next/script";
+import { useConsent } from "@/components/consent/useConsent";
 
 /**
- * Scripts de terceros (GA4 + Meta Pixel).
+ * Scripts de terceros (GA4 + Meta Pixel), condicionados al consentimiento.
  *
- * No se cargan si la variable de entorno correspondiente está vacía, así que
- * por defecto la web no envía nada a terceros.
+ * Nada se carga si falta la variable de entorno, así que por defecto la web
+ * no hace ninguna petición a terceros.
  *
- * RGPD: GA4 arranca con Consent Mode v2 en `denied`. Eso evita cookies de
- * analítica y publicidad hasta que exista un banner de consentimiento que
- * llame a `gtag('consent', 'update', ...)`. Mientras no haya banner, no
- * actives el Pixel de Meta: no tiene equivalente a Consent Mode y escribe
- * cookies en cuanto carga.
+ * Cuando sí hay ID configurado, el script se monta únicamente después de
+ * que el usuario haya aceptado esa finalidad concreta. Es más restrictivo
+ * que el patrón de Google (cargar siempre con Consent Mode en `denied`),
+ * pero deja fuera cualquier zona gris: si no hay consentimiento, no hay
+ * petición. Pierdes el modelado de conversiones de Google, que a esta
+ * escala no aporta nada.
  */
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
 export function ThirdPartyScripts() {
+  const consent = useConsent();
+
+  const analytics = consent?.analytics === true;
+  const marketing = consent?.marketing === true;
+
   return (
     <>
-      {GA_ID && (
+      {GA_ID && analytics && (
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
@@ -29,11 +38,10 @@ export function ThirdPartyScripts() {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('consent', 'default', {
-                ad_storage: 'denied',
-                ad_user_data: 'denied',
-                ad_personalization: 'denied',
-                analytics_storage: 'denied',
-                wait_for_update: 500
+                ad_storage: '${marketing ? "granted" : "denied"}',
+                ad_user_data: '${marketing ? "granted" : "denied"}',
+                ad_personalization: '${marketing ? "granted" : "denied"}',
+                analytics_storage: 'granted'
               });
               gtag('js', new Date());
               gtag('config', '${GA_ID}');
@@ -42,33 +50,21 @@ export function ThirdPartyScripts() {
         </>
       )}
 
-      {META_PIXEL_ID && (
-        <>
-          <Script id="meta-pixel" strategy="afterInteractive">
-            {`
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window,document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '${META_PIXEL_ID}');
-              fbq('track', 'PageView');
-            `}
-          </Script>
-          <noscript>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              height="1"
-              width="1"
-              style={{ display: "none" }}
-              alt=""
-              src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
-            />
-          </noscript>
-        </>
+      {META_PIXEL_ID && marketing && (
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window,document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '${META_PIXEL_ID}');
+            fbq('track', 'PageView');
+          `}
+        </Script>
       )}
     </>
   );
