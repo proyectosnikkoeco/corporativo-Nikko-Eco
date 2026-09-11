@@ -87,5 +87,35 @@ export const principles = [
   },
 ] as const;
 
+/**
+ * Logos de clientes para la franja de prueba social.
+ *
+ * Vacío a propósito: la sección <Clients /> no se renderiza mientras no haya
+ * entradas, así que la web no enseña un hueco vacío. Rellenar SOLO con
+ * clientes reales y con autorización escrita de uso de marca.
+ *
+ * `logo` es una ruta dentro de /public (SVG monocromo preferido).
+ */
+export type Client = { name: string; logo: string };
+export const clients: Client[] = [];
+
+/**
+ * Casos de referencia. Igual que arriba: la sección <Cases /> se oculta
+ * mientras esté vacío. No inventar casos — es publicidad engañosa.
+ *
+ * `metric` es el dato duro que cierra la venta ("48 h de plazo medio",
+ * "312 expedientes en 2025"). `subBrand` debe coincidir con un slug de
+ * subBrands para poder filtrar por especialidad más adelante.
+ */
+export type CaseStudy = {
+  slug: string;
+  subBrand: string;
+  title: string;
+  summary: string;
+  metric?: string;
+  image?: string;
+};
+export const caseStudies: CaseStudy[] = [];
+
 export type Brand = typeof brand;
 export type SubBrand = (typeof subBrands)[number];

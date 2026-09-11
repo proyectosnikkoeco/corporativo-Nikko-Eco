@@ -7,6 +7,8 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SubMark } from "@/components/brand/SubMark";
 import { CTA } from "@/components/sections/CTA";
 import { Principles } from "@/components/sections/Principles";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
 import { subBrands } from "@/lib/brand";
 
 type Params = { slug: string };
@@ -41,6 +43,15 @@ export default async function SubBrandPage({
 
   return (
     <>
+      <JsonLd data={serviceSchema(sub)} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Inicio", path: "/" },
+          { name: "Servicios", path: "/servicios" },
+          { name: `Vialcar ${sub.name}`, path: `/servicios/${sub.slug}` },
+        ])}
+      />
+
       <nav className="sticky top-20 z-30 border-b border-border-soft bg-bone-300/95 backdrop-blur md:top-[116px]">
         <div className="mx-auto max-w-6xl px-6">
           <ul className="-mx-2 flex gap-1 overflow-x-auto py-3">

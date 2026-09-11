@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Fraunces } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { brand } from "@/lib/brand";
+import { organizationSchema, websiteSchema } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { ThirdPartyScripts } from "@/components/analytics/ThirdParty";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
@@ -47,31 +52,14 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const orgSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: brand.name,
-    alternateName: brand.shortName,
-    url: brand.url,
-    description: brand.description,
-    email: brand.contact.email,
-    slogan: brand.claim,
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: "ES",
-    },
-  };
-
   return (
     <html
       lang="es"
       className={`${geist.variable} ${geistMono.variable} ${fraunces.variable} h-full`}
     >
       <body className="min-h-full flex flex-col">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
-        />
+        <JsonLd data={organizationSchema()} />
+        <JsonLd data={websiteSchema()} />
         <a href="#main" className="skip-to-content">
           Saltar al contenido
         </a>
@@ -80,6 +68,9 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Analytics />
+        <SpeedInsights />
+        <ThirdPartyScripts />
       </body>
     </html>
   );
