@@ -32,7 +32,7 @@ export default function Icon() {
             transform: "translate(-4px, 2px)",
           }}
         >
-          N
+          V
         </span>
         <div
           style={{

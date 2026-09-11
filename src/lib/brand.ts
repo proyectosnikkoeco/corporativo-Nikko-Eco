@@ -1,5 +1,5 @@
 /**
- * Configuración única de marca — Nikko Eco
+ * Configuración única de marca — Proyectos Vialcar
  *
  * Fuente: design-system/readme.md
  * "Grupo de servicio inmobiliario integral con cuatro especialidades:
@@ -7,15 +7,15 @@
  */
 
 export const brand = {
-  name: "Nikko Eco",
-  shortName: "Nikko",
+  name: "Proyectos Vialcar",
+  shortName: "Vialcar",
   claim: "Tus objetivos, nuestra meta.",
   claimSecondary: "Tus metas, nuestro oficio.",
   description:
     "Grupo de servicio inmobiliario integral. Cuidamos del lugar donde se vive, donde se trabaja y donde se invierte.",
-  url: "https://nikkoeco.com",
+  url: "https://vialcar.es",
   contact: {
-    email: "info@nikkoeco.com",
+    email: "info@vialcar.es",
     address: "España",
   },
   social: {
@@ -25,8 +25,7 @@ export const brand = {
 } as const;
 
 /**
- * Sub-marcas. La palabra "Eco" solo aparece en la marca paraguas.
- * Las hijas son siempre "Nikko [Descriptor]".
+ * Sub-marcas. Las hijas son siempre "Vialcar [Descriptor]".
  */
 export const subBrands = [
   {
@@ -47,7 +46,7 @@ export const subBrands = [
       "Mantenimiento integral, reparaciones urgentes y cuidado del hogar. Técnicos propios, presupuesto cerrado.",
     image: "/images/hogar.jpg",
     imageAlt:
-      "Vivienda mantenida por Nikko Hogar — salón y cocina abiertas, hogar cuidado",
+      "Vivienda mantenida por Vialcar Hogar — salón y cocina abiertas, hogar cuidado",
   },
   {
     slug: "obras",
@@ -57,7 +56,7 @@ export const subBrands = [
       "Reformas integrales, rehabilitación y subcontrata. Plazo, presupuesto y alcance comprometidos.",
     image: "/images/obras.jpg",
     imageAlt:
-      "Reforma integral terminada por Nikko Obras — cocina con isla y salida al exterior",
+      "Reforma integral terminada por Vialcar Obras — cocina con isla y salida al exterior",
   },
   {
     slug: "capital",
@@ -67,7 +66,7 @@ export const subBrands = [
       "Búsqueda, gestión y valorización de activos inmobiliarios. Acompañamiento end-to-end al inversor.",
     image: "/images/capital.jpg",
     imageAlt:
-      "Activo inmobiliario gestionado por Nikko Capital — promoción residencial de inversión",
+      "Activo inmobiliario gestionado por Vialcar Capital — promoción residencial de inversión",
   },
 ] as const;
 

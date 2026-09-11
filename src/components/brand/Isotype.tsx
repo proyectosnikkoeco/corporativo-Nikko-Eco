@@ -1,23 +1,25 @@
 /**
- * Isotipo oficial Nikko Eco: la "N" en Geist extrabold con el punto ámbar.
- * Spec: design-system/assets/logo/isotype-*.svg
+ * Isotipo Proyectos Vialcar: la "V" en Geist extrabold con el punto ámbar.
  *
- * El punto siempre es ámbar. La "N" cambia según el fondo:
- *  - tone="dark"  → "N" oscura (sobre fondos claros / hueso)
- *  - tone="light" → "N" clara  (sobre fondos oscuros / tinta)
+ * Placeholder — mismo patrón que el antiguo "N." pero con V.
+ * El diseño final del isotipo está pendiente de definición por el cliente.
+ *
+ * El punto siempre es ámbar. La "V" cambia según el fondo:
+ *  - tone="dark"  → "V" oscura (sobre fondos claros / hueso)
+ *  - tone="light" → "V" clara  (sobre fondos oscuros / tinta)
  */
 type Tone = "light" | "dark";
 
 export function Isotype({
   size = 40,
   tone = "dark",
-  title = "Nikko Eco",
+  title = "Proyectos Vialcar",
 }: {
   size?: number;
   tone?: Tone;
   title?: string;
 }) {
-  const nFill = tone === "light" ? "var(--bone-300)" : "var(--ink-900)";
+  const vFill = tone === "light" ? "var(--bone-300)" : "var(--ink-900)";
 
   return (
     <svg
@@ -36,11 +38,11 @@ export function Isotype({
         fontWeight={800}
         fontSize={140}
         letterSpacing={-7}
-        fill={nFill}
+        fill={vFill}
       >
-        N
+        V
       </text>
-      <circle cx="146" cy="138" r="12" fill="var(--amber-400)" />
+      <circle cx="150" cy="138" r="12" fill="var(--amber-400)" />
     </svg>
   );
 }

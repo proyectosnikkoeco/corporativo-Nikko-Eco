@@ -17,7 +17,7 @@ export function Principles() {
           </div>
           <p className="font-serif italic font-light text-[22px] leading-[1.35] tracking-[-0.015em] text-bone-300/75">
             Ni las llamadas sin contestar. Ni los plazos sin cumplir. Ni los presupuestos sin
-            cerrar. Por eso existe Nikko.
+            cerrar. Por eso existe Vialcar.
           </p>
         </div>
 

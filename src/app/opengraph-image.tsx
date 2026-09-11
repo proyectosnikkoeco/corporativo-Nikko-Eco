@@ -29,18 +29,18 @@ export default function OpengraphImage() {
         {/* Wordmark */}
         <div style={{ display: "flex", alignItems: "flex-end", color: BONE }}>
           <span style={{ fontSize: 64, fontWeight: 800, letterSpacing: "-3px" }}>
-            Nikko
+            Proyectos Vialcar
           </span>
           <span
             style={{
-              fontSize: 36,
+              fontSize: 64,
               fontStyle: "italic",
               color: AMBER,
-              marginLeft: 6,
-              marginBottom: 6,
+              marginLeft: 2,
+              lineHeight: 1,
             }}
           >
-            Eco.
+            .
           </span>
         </div>
 
@@ -95,7 +95,7 @@ export default function OpengraphImage() {
           }}
         >
           <span style={{ fontSize: 80, fontWeight: 900, letterSpacing: "-5px", lineHeight: 1 }}>
-            N
+            V
           </span>
           <div
             style={{

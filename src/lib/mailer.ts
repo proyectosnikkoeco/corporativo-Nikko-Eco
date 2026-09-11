@@ -2,7 +2,7 @@ import "server-only";
 import nodemailer, { type Transporter } from "nodemailer";
 
 /**
- * Configuración SMTP — Nikko Eco
+ * Configuración SMTP — Proyectos Vialcar
  *
  * Las credenciales se leen de variables de entorno. Crea un archivo
  * `.env.local` en la raíz del proyecto a partir de `.env.example`.
@@ -10,10 +10,10 @@ import nodemailer, { type Transporter } from "nodemailer";
  * Valores típicos para IONOS:
  *   SMTP_HOST=smtp.ionos.es
  *   SMTP_PORT=587        (STARTTLS, recomendado)
- *   SMTP_USER=info@nikkoeco.com
+ *   SMTP_USER=info@vialcar.es
  *   SMTP_PASS=••••••••
- *   MAIL_TO=ventas@nikkoeco.com
- *   MAIL_FROM_NAME=Web Nikko Eco
+ *   MAIL_TO=info@vialcar.es
+ *   MAIL_FROM_NAME=Web Proyectos Vialcar
  */
 
 type SmtpConfig = {
@@ -32,7 +32,7 @@ function readConfig(): SmtpConfig {
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
   const mailTo = process.env.MAIL_TO ?? user;
-  const fromName = process.env.MAIL_FROM_NAME ?? "Web Nikko Eco";
+  const fromName = process.env.MAIL_FROM_NAME ?? "Web Proyectos Vialcar";
 
   if (!host || !user || !pass || !mailTo) {
     throw new Error(
@@ -75,10 +75,10 @@ function esc(s: string): string {
 }
 
 const SERVICE_LABEL: Record<string, string> = {
-  seguros: "Nikko Seguros",
-  hogar: "Nikko Hogar",
-  obras: "Nikko Obras",
-  capital: "Nikko Capital",
+  seguros: "Vialcar Seguros",
+  hogar: "Vialcar Hogar",
+  obras: "Vialcar Obras",
+  capital: "Vialcar Capital",
   general: "Consulta general",
 };
 
@@ -90,7 +90,7 @@ export async function sendContactEmail(payload: ContactPayload): Promise<void> {
   const subject = `Solicitud web — ${payload.name} · ${service}`;
 
   const text = [
-    `Nueva solicitud desde la web de Nikko Eco`,
+    `Nueva solicitud desde la web de Proyectos Vialcar`,
     ``,
     `Nombre:        ${payload.name}`,
     `Email:         ${payload.email}`,
@@ -101,7 +101,7 @@ export async function sendContactEmail(payload: ContactPayload): Promise<void> {
     payload.message,
     ``,
     `---`,
-    `Enviado desde nikkoeco.com · Responde a este correo para contactar con el cliente.`,
+    `Enviado desde vialcar.es · Responde a este correo para contactar con el cliente.`,
   ].join("\n");
 
   const html = `<!doctype html>
@@ -133,7 +133,7 @@ export async function sendContactEmail(payload: ContactPayload): Promise<void> {
           <p style="margin:0;font-size:15px;line-height:1.55;color:#0A0E1A;white-space:pre-wrap;">${esc(payload.message)}</p>
         </td></tr>
         <tr><td style="padding:20px 32px;background:#0A0E1A;color:rgba(239,237,230,0.65);">
-          <p style="margin:0;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;">Nikko<i style="color:#F0B73E;font-style:italic;font-family:Georgia,serif;font-weight:300;"> Eco.</i> — nikkoeco.com</p>
+          <p style="margin:0;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;">Proyectos Vialcar<i style="color:#F0B73E;font-style:italic;font-family:Georgia,serif;font-weight:300;">.</i> — vialcar.es</p>
           <p style="margin:6px 0 0;font-size:12px;">Responde a este correo para contactar directamente con ${esc(payload.name)}.</p>
         </td></tr>
       </table>
@@ -169,7 +169,7 @@ async function sendConfirmationEmail(
   payload: ContactPayload,
   service: string,
 ): Promise<void> {
-  const subject = "Hemos recibido tu solicitud · Nikko Eco";
+  const subject = "Hemos recibido tu solicitud · Proyectos Vialcar";
 
   const text = [
     `Hola ${payload.name},`,
@@ -183,7 +183,7 @@ async function sendConfirmationEmail(
     `Si necesitas añadir algo, puedes responder a este correo.`,
     ``,
     `Tus objetivos, nuestra meta.`,
-    `Nikko Eco · nikkoeco.com`,
+    `Proyectos Vialcar · vialcar.es`,
   ].join("\n");
 
   const html = `<!doctype html>
@@ -194,7 +194,7 @@ async function sendConfirmationEmail(
     <tr><td align="center" style="padding:32px 16px;">
       <table role="presentation" width="560" cellpadding="0" cellspacing="0" style="max-width:560px;">
         <tr><td style="padding:36px 36px 28px;background:#0A0E1A;">
-          <p style="margin:0;font-size:24px;font-weight:800;letter-spacing:-1.2px;color:#EFEDE6;">Nikko<i style="color:#F0B73E;font-style:italic;font-family:Georgia,serif;font-weight:300;font-size:0.6em;"> Eco.</i></p>
+          <p style="margin:0;font-size:22px;font-weight:800;letter-spacing:-1px;color:#EFEDE6;">Proyectos Vialcar<i style="color:#F0B73E;font-style:italic;font-family:Georgia,serif;font-weight:300;">.</i></p>
         </td></tr>
         <tr><td style="padding:36px 36px 8px;background:#F6F4ED;border-left:3px solid #F0B73E;">
           <p style="margin:0;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:#4A5566;font-weight:600;">— Solicitud recibida</p>
@@ -214,7 +214,7 @@ async function sendConfirmationEmail(
         </td></tr>
         <tr><td style="padding:20px 36px;background:#0A0E1A;color:rgba(239,237,230,0.65);">
           <p style="margin:0;font-size:13px;font-style:italic;font-family:Georgia,serif;color:#F0B73E;">Tus objetivos, nuestra meta.</p>
-          <p style="margin:6px 0 0;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;">Nikko Eco · nikkoeco.com</p>
+          <p style="margin:6px 0 0;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;">Proyectos Vialcar · vialcar.es</p>
         </td></tr>
       </table>
     </td></tr>

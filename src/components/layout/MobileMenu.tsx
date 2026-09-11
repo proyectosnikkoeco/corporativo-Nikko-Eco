@@ -90,7 +90,7 @@ export function MobileMenu() {
                         activeClassName="!text-amber-600"
                       >
                         <span style={{ fontSize: 22, letterSpacing: "-0.02em" }}>
-                          Nikko {s.name}
+                          Vialcar {s.name}
                         </span>
                       </NavLink>
                     </li>

@@ -8,7 +8,7 @@ import { subBrands } from "@/lib/brand";
 export const metadata: Metadata = {
   title: "Sobre nosotros",
   description:
-    "Nikko Eco — grupo de servicio inmobiliario integral. Cuidamos del lugar donde se vive, donde se trabaja y donde se invierte.",
+    "Proyectos Vialcar — grupo de servicio inmobiliario integral. Cuidamos del lugar donde se vive, donde se trabaja y donde se invierte.",
   alternates: { canonical: "/sobre-nosotros" },
 };
 
@@ -27,7 +27,7 @@ export default function SobreNosotrosPage() {
 
           <div className="mt-10 space-y-7 text-[17px] leading-[1.65] text-ink-800/90">
             <p className="font-serif italic font-light text-[24px] leading-[1.35] tracking-[-0.015em] text-ink-800">
-              Nikko Eco es un grupo de servicio inmobiliario integral con cuatro
+              Proyectos Vialcar es un grupo de servicio inmobiliario integral con cuatro
               especialidades: Seguros, Hogar, Obras y Capital.
             </p>
             <p>

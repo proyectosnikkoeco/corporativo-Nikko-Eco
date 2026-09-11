@@ -1,6 +1,6 @@
-# Nikko Eco — Web corporativa
+# Proyectos Vialcar — Web corporativa
 
-Sitio corporativo de **Nikko Eco**, grupo de servicio inmobiliario integral con cuatro
+Sitio corporativo de **Proyectos Vialcar**, grupo de servicio inmobiliario integral con cuatro
 especialidades: Seguros, Hogar, Obras y Capital.
 
 > **Tus objetivos, nuestra meta.**

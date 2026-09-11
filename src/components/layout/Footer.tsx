@@ -28,7 +28,7 @@ export function Footer() {
                   href={`/servicios/${s.slug}`}
                   className="text-bone-300/85 hover:text-amber-400 transition-colors"
                 >
-                  Nikko {s.name}
+                  Vialcar {s.name}
                 </Link>
               </li>
             ))}

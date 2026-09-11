@@ -10,7 +10,7 @@ import { subBrands } from "@/lib/brand";
 export const metadata: Metadata = {
   title: "Servicios",
   description:
-    "Las cuatro especialidades de Nikko Eco: Seguros, Hogar, Obras y Capital. Una sola interlocución, expediente único.",
+    "Las cuatro especialidades de Proyectos Vialcar: Seguros, Hogar, Obras y Capital. Una sola interlocución, expediente único.",
   alternates: { canonical: "/servicios" },
 };
 
@@ -28,7 +28,7 @@ export default function ServiciosPage() {
             <br /> Una sola <span className="font-serif italic font-light text-amber-600">interlocución.</span>
           </h1>
           <p className="mt-6 text-[17px] leading-[1.6] text-ink-800/85">
-            Cada especialidad de Nikko es un equipo técnico propio. Coordinamos
+            Cada especialidad de Vialcar es un equipo técnico propio. Coordinamos
             internamente para que tú trates con una sola persona.
           </p>
         </div>
@@ -67,7 +67,7 @@ export default function ServiciosPage() {
                       {s.summary}
                     </p>
                     <p className="mt-8 font-mono text-[10.5px] uppercase tracking-[0.22em] text-ink-700 transition-colors group-hover:text-amber-600">
-                      Ver Nikko {s.name}
+                      Ver Vialcar {s.name}
                       <span aria-hidden className="ml-1 inline-block transition-transform duration-[160ms] ease-out group-hover:translate-x-1">→</span>
                     </p>
                   </div>

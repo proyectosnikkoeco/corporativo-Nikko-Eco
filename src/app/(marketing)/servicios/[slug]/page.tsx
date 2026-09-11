@@ -24,7 +24,7 @@ export async function generateMetadata({
   const sub = subBrands.find((b) => b.slug === slug);
   if (!sub) return {};
   return {
-    title: `Nikko ${sub.name}`,
+    title: `Vialcar ${sub.name}`,
     description: sub.summary,
     alternates: { canonical: `/servicios/${sub.slug}` },
   };
@@ -57,7 +57,7 @@ export default async function SubBrandPage({
                         : "text-ink-700 hover:text-amber-600"
                     }`}
                   >
-                    Nikko {b.name}
+                    Vialcar {b.name}
                   </Link>
                 </li>
               );
@@ -72,7 +72,7 @@ export default async function SubBrandPage({
             <Link href="/servicios" className="hover:text-amber-600">
               Servicios
             </Link>{" "}
-            <span aria-hidden>/</span> Nikko {sub.name}
+            <span aria-hidden>/</span> Vialcar {sub.name}
           </p>
 
           <div className="mt-8 grid items-end gap-10 md:grid-cols-[1.2fr_1fr]">
@@ -86,7 +86,7 @@ export default async function SubBrandPage({
                   letterSpacing: "-0.05em",
                 }}
               >
-                Nikko{" "}
+                Vialcar{" "}
                 <span className="font-serif italic font-light text-amber-600">
                   {sub.name}.
                 </span>
@@ -124,7 +124,7 @@ export default async function SubBrandPage({
       <Principles />
 
       <CTA
-        eyebrow={`Nikko ${sub.name}`}
+        eyebrow={`Vialcar ${sub.name}`}
         titleLead={`Cuéntanos tu proyecto de ${sub.name.toLowerCase()}.`}
         titleAccent="Te llamamos hoy."
         body="Un técnico de la especialidad te llama, escucha el caso y te enviamos un presupuesto cerrado. Sin pelotear entre oficinas."

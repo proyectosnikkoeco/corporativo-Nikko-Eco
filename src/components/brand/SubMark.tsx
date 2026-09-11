@@ -1,8 +1,8 @@
 /**
- * SubMark — sub-marcas Nikko Seguros / Hogar / Obras / Capital.
+ * SubMark — sub-marcas Vialcar Seguros / Hogar / Obras / Capital.
  * Spec: design-system/components/brand/SubMark.jsx
  *
- * "Nikko" en Geist bold + descriptor en medium ámbar. SIN "Eco".
+ * "Vialcar" en Geist bold + descriptor en medium ámbar.
  */
 type SubBrand = "Seguros" | "Hogar" | "Obras" | "Capital";
 type Size = "sm" | "md" | "lg" | "xl";
@@ -38,7 +38,7 @@ export function SubMark({
         whiteSpace: "nowrap",
       }}
     >
-      Nikko
+      Vialcar
       <span
         style={{
           fontWeight: 500,

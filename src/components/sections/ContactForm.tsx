@@ -23,7 +23,7 @@ export function ContactForm() {
           {state.message}
         </p>
         <p className="mt-4 text-[14px] leading-[1.6] text-ink-800/70">
-          Si surge algo antes, escríbenos a info@nikkoeco.com.
+          Si surge algo antes, escríbenos a info@vialcar.es.
         </p>
       </div>
     );
@@ -71,7 +71,7 @@ export function ContactForm() {
             </option>
             {subBrands.map((s) => (
               <option key={s.slug} value={s.slug}>
-                Nikko {s.name}
+                Vialcar {s.name}
               </option>
             ))}
           </select>

@@ -48,7 +48,7 @@ export default function NotFound() {
                   href={`/servicios#${s.slug}`}
                   className="text-bone-300/85 hover:text-amber-400"
                 >
-                  Nikko {s.name}
+                  Vialcar {s.name}
                 </Link>
               </li>
             ))}

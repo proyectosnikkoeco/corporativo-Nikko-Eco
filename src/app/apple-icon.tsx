@@ -32,7 +32,7 @@ export default function AppleIcon() {
             transform: "translate(-10px, 6px)",
           }}
         >
-          N
+          V
         </span>
         <div
           style={{
